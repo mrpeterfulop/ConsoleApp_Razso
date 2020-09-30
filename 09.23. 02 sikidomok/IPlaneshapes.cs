@@ -2,6 +2,6 @@
 {
     public interface IPlaneshapes //Felület létrehozva
     {
-        int  Area();
+        double Area();
     }
 }

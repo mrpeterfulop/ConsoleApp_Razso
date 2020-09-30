@@ -12,7 +12,7 @@ namespace _09._23._02_sikidomok
         }
 
 
-        public int Area()
+        public double Area()
 
         {
 

@@ -25,7 +25,7 @@ namespace _09._23._02_sikidomok
 
 
             var sumArea = square.Area() + circle.Area() + triangle.Area();
-            Console.WriteLine($"Területösszeg: {sumArea}");
+            Console.WriteLine($"Területösszeg: {sumArea} m2");
             //Console.WriteLine("Terület összeg:{0}", sumArea);
 
 
@@ -57,7 +57,7 @@ namespace _09._23._02_sikidomok
             var sum = planeShapes.Sum(x=>x.Area());
             
 
-            Console.WriteLine($"Az összes terület: {sum}");
+            Console.WriteLine($"Az összes terület: {sum} m2");
 
 
 

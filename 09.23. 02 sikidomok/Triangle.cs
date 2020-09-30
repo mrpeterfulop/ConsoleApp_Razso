@@ -13,7 +13,7 @@ namespace _09._23._02_sikidomok
             this.sideLength = sideLength;
         }
 
-        public int Area()
+        public double Area()
         {
             return (height * sideLength) / 2;
         }

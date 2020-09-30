@@ -18,10 +18,10 @@ namespace _09._23._02_sikidomok
         return (int)(Radius * Radius * Math.PI);
         }*/
 
-        public int Area()
+        public double Area()
         {
 
-            return (int)(Radius * Radius * Math.PI);
+            return Radius * Radius * Math.PI;
 
 
         }
