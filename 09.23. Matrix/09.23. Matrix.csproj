@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{ABE9810D-C73F-4815-9CD4-A2B016725227}</ProjectGuid>
+    <ProjectGuid>{00C30895-DFE3-47A5-9DDF-1E22959804D2}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_09._23._03_Matrix</RootNamespace>
-    <AssemblyName>09.23. 03 Matrix</AssemblyName>
+    <RootNamespace>_09._23.Matrix</RootNamespace>
+    <AssemblyName>_09._23.Matrix</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

@@ -13,7 +13,7 @@ namespace _09._23._03_Matrix
 
 
 
-            int[,] myMatrix = new int [6,7];
+            int[,] myMatrix = new int[6, 7];
             string[] myMatrixHeader = { "Hétfő", "Kedd", "Szerda", "Csütörtök", "Péntek", "Szombat", "Vasárnap" };
 
             Random rnd = new Random();
@@ -25,7 +25,7 @@ namespace _09._23._03_Matrix
 
             for (int i = 0; i < myMatrixHeader.Length; i++) //A fejléc tömb elemeinek hosszát egy új tömbbe mentem, számként!
             {
-                              
+
                 var textLength = myMatrixHeader[i].Length;
                 var pointNumbers = textLength - 2;
                 charNumbers[i] = pointNumbers;
@@ -46,10 +46,10 @@ namespace _09._23._03_Matrix
 
                 string text = string.Concat(puffer);
                 characters[i] = text;
-                
-               // Console.WriteLine(characters[i]);
-               //Console.WriteLine();
-                
+
+                // Console.WriteLine(characters[i]);
+                //Console.WriteLine();
+
 
             }
 
@@ -71,22 +71,22 @@ namespace _09._23._03_Matrix
 
 
             for (int k = 0; k < myMatrixHeader.Length; k++)
-                    {
-                        Console.Write("| " + myMatrixHeader[k] + " ");
-                    }
+            {
+                Console.Write("| " + myMatrixHeader[k] + " ");
+            }
             Console.WriteLine();
             Console.WriteLine("/////////////////////////////////////////////////////////////////");
 
 
-            for (int i = 0; i < myMatrix.GetLength(0)-1; i++)
+            for (int i = 0; i < myMatrix.GetLength(0) - 1; i++)
             {
                 for (int j = 0; j < myMatrix.GetLength(1); j++)
                 {
 
-                    myMatrix[i,j] = rnd.Next(10, 99);
+                    myMatrix[i, j] = rnd.Next(10, 99);
                     Console.Write("| " + characters[j] + myMatrix[i, j] + " ");
                 }
-                    Console.WriteLine();
+                Console.WriteLine();
             }
 
             Console.WriteLine("-----------------------------------------------------------------");
