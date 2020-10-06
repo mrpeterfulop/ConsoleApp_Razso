@@ -17,9 +17,7 @@ namespace _09._30._01_coin_counterfeiting
             //Coin coin = new FakeCoin();
 
             DoGetCoin(coin);
-            
             Console.ReadKey();
-
         }
         
 
@@ -33,5 +31,4 @@ namespace _09._30._01_coin_counterfeiting
         }
     }
 }
-
 
