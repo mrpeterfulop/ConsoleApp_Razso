@@ -18,9 +18,9 @@ namespace _10._07.Random_Array_with_Input
                 run = false;
 
                 color.colorGreen();
-                Console.WriteLine("Újra szeretnéd indítani?(Y + ENTER)");
+                Console.WriteLine("Újraindításhoz: Y + ENTER");
                 color.colorRed();
-                Console.WriteLine("A befejezéshez nyomj meg egy tetszőelges gombot!");
+                Console.WriteLine("Befejezéshez: tetszőleges gomb + ENTER");
                 color.colorWhite();
 
                 var a = Console.ReadLine();
@@ -32,7 +32,7 @@ namespace _10._07.Random_Array_with_Input
                 else
                 {
                     run = false;
-                    Console.WriteLine("A befejezéshez: tetszőleges gomb + ENTER!");
+                    
                 }
             }
         }
