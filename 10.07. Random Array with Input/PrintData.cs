@@ -5,11 +5,9 @@ namespace _10._07.Random_Array_with_Input
     internal class PrintData
     {
 
-
         public void writeAll() {
 
             var alert = new ColorAlerts();
-            
 
             //1. írasd ki a sorozat utolsó elemét
             var array = new FillArray();
@@ -39,15 +37,12 @@ namespace _10._07.Random_Array_with_Input
             alert.colorBlue();
             Console.WriteLine($"{maxValue}\n");
 
-
-
             //4. írasd ki a legkisebb értékét
             alert.colorWhite();
             int minValue = array.myArray.Min();
             Console.WriteLine($"A sorozat legkisebb értéke:");
             alert.colorBlue();
             Console.WriteLine($"{minValue}\n");
-
 
             //5. rendezd a sorozatot növekvő sorrendbe
             Array.Sort(array.myArray);
@@ -61,10 +56,5 @@ namespace _10._07.Random_Array_with_Input
             Console.WriteLine("\n");
             alert.colorWhite();
         }
-
-
-        
-
-
     }
 }

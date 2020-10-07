@@ -9,7 +9,6 @@ namespace _10._07.Random_Array_with_Input
 
         public void fillData()
         {
-            //int[] myArray = new int[] { };
             var getUserData = new GetUserData();
             int value = getUserData.getData();
 
@@ -21,15 +20,8 @@ namespace _10._07.Random_Array_with_Input
 
             for (int i = 0; i < myArray.Length; i++)
             {
-                myArray[i] = rnd.Next(0, 1000);
+                myArray[i] = rnd.Next(0, 1001);
             }
-
-            /* foreach (var item in myArray)
-            {
-                Console.Write($"{item},");
-            }
-            Console.WriteLine();*/
-
         }
     }
 }

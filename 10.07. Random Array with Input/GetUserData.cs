@@ -12,7 +12,6 @@ namespace _10._07.Random_Array_with_Input
         public int getData() {
             
             var alert = new ColorAlerts();
-            
 
             do
             {
@@ -43,10 +42,7 @@ namespace _10._07.Random_Array_with_Input
 
             return myValue;
 
-
         }
-
-
     }
 }
  
