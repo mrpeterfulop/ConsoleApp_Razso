@@ -46,6 +46,7 @@
     <Compile Include="ColorAlerts.cs" />
     <Compile Include="FillArray.cs" />
     <Compile Include="GetUserData.cs" />
+    <Compile Include="LoopProgram.cs" />
     <Compile Include="PrintData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -2,7 +2,7 @@
 
 namespace _10._07.Random_Array_with_Input
 {
-    internal class ColorAlerts
+    public class ColorAlerts
     {
 
         public void colorWhite()
