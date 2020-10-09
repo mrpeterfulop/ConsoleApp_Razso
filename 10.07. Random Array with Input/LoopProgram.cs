@@ -2,21 +2,19 @@
 
 namespace _10._07.Random_Array_with_Input
 {
-    internal class LoopProgram
+    public class LoopProgram
     {
 
-        internal void start()
+        public void start()
         {
             bool run = true;
-
 
             while (run)
             {
                 var color = new ColorAlerts();
                 var print = new PrintData();
-                print.writeAll();
-                run = false;
-
+                print.writeAll();  
+                
                 color.colorGreen();
                 Console.WriteLine("Újraindításhoz: Y + ENTER");
                 color.colorRed();

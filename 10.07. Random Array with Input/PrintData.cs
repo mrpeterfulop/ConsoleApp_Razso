@@ -2,7 +2,7 @@
 using System.Linq;
 namespace _10._07.Random_Array_with_Input
 {
-    internal class PrintData
+    public class PrintData
     {
 
         public void writeAll()
@@ -19,7 +19,7 @@ namespace _10._07.Random_Array_with_Input
             Write5(alert, array);
         }
 
-        private static void Write5(ColorAlerts alert, FillArray array)
+        public void Write5(ColorAlerts alert, FillArray array)
         {
             //5. rendezd a sorozatot növekvő sorrendbe
             Array.Sort(array.myArray);
@@ -34,7 +34,7 @@ namespace _10._07.Random_Array_with_Input
             alert.colorWhite();
         }
 
-        private static void Write4(ColorAlerts alert, FillArray array)
+        public void Write4(ColorAlerts alert, FillArray array)
         {
             //4. írasd ki a legkisebb értékét
             alert.colorWhite();
@@ -44,7 +44,7 @@ namespace _10._07.Random_Array_with_Input
             Console.WriteLine($"{minValue}\n");
         }
 
-        private static void Write3(ColorAlerts alert, FillArray array)
+        public void Write3(ColorAlerts alert, FillArray array)
         {
             //3. írasd ki a legnagyobb értékét
             int maxValue = array.myArray.Max();
@@ -54,7 +54,7 @@ namespace _10._07.Random_Array_with_Input
             Console.WriteLine($"{maxValue}\n");
         }
 
-        private static void Write2(ColorAlerts alert, FillArray array)
+        public void Write2(ColorAlerts alert, FillArray array)
         {
             //2. írasd ki a sorozat eredményét egy sorba
             alert.colorWhite();
@@ -67,7 +67,7 @@ namespace _10._07.Random_Array_with_Input
             Console.WriteLine("\n");
         }
 
-        private static void Write1(ColorAlerts alert, FillArray array)
+        public void Write1(ColorAlerts alert, FillArray array)
         {
             //1. írasd ki a sorozat utolsó elemét
             int lastElement = array.myArray.Length - 1;

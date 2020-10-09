@@ -5,11 +5,11 @@ namespace _10._07.Random_Array_with_Input
     public class GetUserData
     {
 
-        string input;
-        bool validation;
-        int myValue;
-
         public int getData() {
+
+            string input;
+            bool validation;
+            int myValue;
             
             var alert = new ColorAlerts();
 
@@ -45,4 +45,3 @@ namespace _10._07.Random_Array_with_Input
         }
     }
 }
- 

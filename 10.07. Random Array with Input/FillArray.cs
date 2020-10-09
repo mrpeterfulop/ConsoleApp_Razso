@@ -9,10 +9,7 @@ namespace _10._07.Random_Array_with_Input
 
         public void fillData()
         {
-            var getUserData = new GetUserData();
-            int value = getUserData.getData();
-
-            var printData = new PrintData();
+            int value = new GetUserData().getData();
 
             Random rnd = new Random();
 

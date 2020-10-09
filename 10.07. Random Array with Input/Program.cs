@@ -11,6 +11,7 @@ namespace _10._07.Random_Array_with_Input
 
         static void Main(string[] args)
         {
+
             var loopProgram = new LoopProgram();
             loopProgram.start();
         }
