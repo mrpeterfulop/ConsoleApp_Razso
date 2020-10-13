@@ -27,6 +27,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.07. Random Array with In
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.09. String methods", "10.09. String methods\10.09. String methods.csproj", "{FBFC47EB-E35E-418B-A288-8D0022A4BBF8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.12. File System, folders, files", "10.12. File System, folders, files\10.12. File System, folders, files.csproj", "{B201B18E-2C53-4A6D-9E70-8330B94A1C46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.12. Select and Copy files", "10.12. Select and Copy files\10.12. Select and Copy files.csproj", "{B6DB9967-1AAE-4600-A1CC-101D22C55853}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +85,14 @@ Global
 		{FBFC47EB-E35E-418B-A288-8D0022A4BBF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FBFC47EB-E35E-418B-A288-8D0022A4BBF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FBFC47EB-E35E-418B-A288-8D0022A4BBF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B201B18E-2C53-4A6D-9E70-8330B94A1C46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B201B18E-2C53-4A6D-9E70-8330B94A1C46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B201B18E-2C53-4A6D-9E70-8330B94A1C46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B201B18E-2C53-4A6D-9E70-8330B94A1C46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6DB9967-1AAE-4600-A1CC-101D22C55853}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6DB9967-1AAE-4600-A1CC-101D22C55853}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6DB9967-1AAE-4600-A1CC-101D22C55853}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6DB9967-1AAE-4600-A1CC-101D22C55853}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -73,27 +73,26 @@ namespace _10._09.String_methods
             }
             */
 
-
+            
             var inputPatch = new InputPatch();
 
             inputPatch.loopPatch();
-
             
+
             //Console.WriteLine($"A tömb elemeinek száma:{ extensionFile.Length}");
             //Console.WriteLine($"A tömb elemei:");
 
 
+            
+                                             
 
 
-
-
-
-
-
-
-            Console.ReadKey();
-
+            
 
         }
+
+
+        
+
     }
 }

@@ -26,7 +26,6 @@ namespace _10._09.String_methods
             do
             {
 
-
                 Console.WriteLine("Kérlek add meg a dokumentum elérési útját:");
                 patch = Console.ReadLine();
                 int locateLength = patch.Length;
@@ -60,7 +59,7 @@ namespace _10._09.String_methods
         }
 
 
-        public void loopPatch()
+        public void loopPatch() 
         {
 
             do
@@ -75,10 +74,15 @@ namespace _10._09.String_methods
 
                     Console.WriteLine("Hiba az elérési útvonalban!");
                 }
-                catch(ArgumentException)
+                catch(ArgumentException) 
                 {
-                    Console.WriteLine("Érvénytelen karakter!");
-                }  
+                    Console.WriteLine("Érvénytelen karaktert tartalmaz az útvonal!");
+                }
+
+                catch (UnauthorizedAccessException)
+                {
+                    Console.WriteLine("Hiba az elérési útvonalban!");
+                }
 
             } while (stopLoop == false);
 
