@@ -76,6 +76,32 @@ namespace _10._20.Webuni___Generikusok
                 Console.WriteLine($"item.key: {item.Key}, item.value: {item.Value}");
             }
 
+            var a = "autó";
+            var b = "city";
+
+            var checkKey = dict.ContainsKey(a);
+            var checkValue = dict.ContainsValue(b);
+
+
+
+            if (checkKey == true)
+            {
+                Console.WriteLine($"A keresett '{a}' kifejezés szerepel a könyvtárban!");
+            }
+            else
+            {
+                Console.WriteLine($"A keresett '{a}' kifejezés NEM szerepel a könyvtárban!");
+            }
+
+            if (checkValue == true)
+            {
+                Console.WriteLine($"A keresett '{b}' kifejezés szerepel a könyvtárban!");
+            }
+
+            else
+            {
+                Console.WriteLine($"A keresett '{b}' kifejezés NEM szerepel a könyvtárban!");
+            }
 
 
 
