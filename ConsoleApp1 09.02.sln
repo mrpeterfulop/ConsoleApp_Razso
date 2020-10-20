@@ -39,6 +39,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.19. Feladat_03", "10.19.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.19. Feladat_04", "10.19. Feladat_04\10.19. Feladat_04.csproj", "{A10BE3B3-8895-4D19-B5E3-D866A85349BD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.20. Webuni", "10.20. Webuni\10.20. Webuni.csproj", "{02A346CE-E117-4D9F-8F80-814D4E916334}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.20. Webuni - Generikusok", "10.20. Webuni - Generikusok\10.20. Webuni - Generikusok.csproj", "{37046EAC-86F3-4EEF-A45D-40C33A74784B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,6 +121,14 @@ Global
 		{A10BE3B3-8895-4D19-B5E3-D866A85349BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A10BE3B3-8895-4D19-B5E3-D866A85349BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A10BE3B3-8895-4D19-B5E3-D866A85349BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02A346CE-E117-4D9F-8F80-814D4E916334}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02A346CE-E117-4D9F-8F80-814D4E916334}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02A346CE-E117-4D9F-8F80-814D4E916334}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02A346CE-E117-4D9F-8F80-814D4E916334}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37046EAC-86F3-4EEF-A45D-40C33A74784B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37046EAC-86F3-4EEF-A45D-40C33A74784B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37046EAC-86F3-4EEF-A45D-40C33A74784B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37046EAC-86F3-4EEF-A45D-40C33A74784B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
