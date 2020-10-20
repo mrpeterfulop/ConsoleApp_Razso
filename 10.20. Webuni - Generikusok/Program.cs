@@ -83,7 +83,6 @@ namespace _10._20.Webuni___Generikusok
             var checkValue = dict.ContainsValue(b);
 
 
-
             if (checkKey == true)
             {
                 Console.WriteLine($"A keresett '{a}' kifejezés szerepel a könyvtárban!");
@@ -102,7 +101,6 @@ namespace _10._20.Webuni___Generikusok
             {
                 Console.WriteLine($"A keresett '{b}' kifejezés NEM szerepel a könyvtárban!");
             }
-
 
 
             Console.ReadKey();
