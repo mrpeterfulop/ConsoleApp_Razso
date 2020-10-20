@@ -59,8 +59,6 @@ namespace _09._23._02_sikidomok
 
             Console.WriteLine($"Az összes terület: {sum} m2");
 
-
-
             Console.ReadLine();
 
         }
