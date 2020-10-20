@@ -43,6 +43,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.20. Webuni", "10.20. Web
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.20. Webuni - Generikusok", "10.20. Webuni - Generikusok\10.20. Webuni - Generikusok.csproj", "{37046EAC-86F3-4EEF-A45D-40C33A74784B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.20. Orai munka", "10.20. Orai munka\10.20. Orai munka.csproj", "{79FFA208-FB3A-4399-81EC-A3AEDAD5A827}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -129,6 +131,10 @@ Global
 		{37046EAC-86F3-4EEF-A45D-40C33A74784B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37046EAC-86F3-4EEF-A45D-40C33A74784B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37046EAC-86F3-4EEF-A45D-40C33A74784B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79FFA208-FB3A-4399-81EC-A3AEDAD5A827}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79FFA208-FB3A-4399-81EC-A3AEDAD5A827}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79FFA208-FB3A-4399-81EC-A3AEDAD5A827}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79FFA208-FB3A-4399-81EC-A3AEDAD5A827}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
