@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Diagnostics;
 using System.Management.Instrumentation;
+using System.Reflection;
 
 namespace _10._20.Orai_munka
 {
@@ -108,13 +109,64 @@ namespace _10._20.Orai_munka
 
 
 
-        //3.2.1 Érték szerinti átadás
+        //3.2.1 Érték szerinti átadás ///////////////////////////////////
         public void Show(int height)
         {
-            Console.WriteLine($"Show height: {height}");
+            Console.WriteLine($"Show ertek: {height}");
             height *= 2;
-            Console.WriteLine($"Show height szorzás után: {height}");
+            Console.WriteLine($"Show ertek szorzás után: {height}");
+        }
 
+        //3.2.2 Referencia szerinti átadás //////////////////////////////
+        public void Show(RefTyp refer)
+        {
+            Console.WriteLine($"Show refer: {refer.value}");
+            refer.value *= 2;
+            Console.WriteLine($"Show refer, szorzás után: {refer.value}");
+        }
+
+        //3.2.3 Érték + Referencia szerinti átadás ///////////////////////
+        public void Show(int height, RefTyp refer)
+        {
+            Console.WriteLine($"Show ertek: {height} Show refer: {refer.value}");
+            height *= 2;
+            refer.value *= 2;
+            Console.WriteLine($"Show ertek, szorzás után: {height} Show refer, szorzás után: {refer.value}");
+        }
+
+        //3.2.4 Referencia típusként történő érték átadás ///////////////
+        public void Show(ref int height)
+        {
+            Console.WriteLine($"Show ertek2: {height}");
+            height *= 2;
+            Console.WriteLine($"Show ertek2 szorzás után: {height}");
+        }
+
+
+        //3.2.3 Érték + Referencia szerinti átadás ///////////////////////
+        public void Show(int height, RefTyp refer, ref int ertek2, out int ertek3)
+        {
+            ertek3 = 10;
+            Console.WriteLine($"Show ertek: {height} Show refer: {refer.value}, Show ertek2:{ertek2}, Show ertek3 (out):{ertek3}");
+            height *= 2;
+            refer.value *= 2;
+            ertek2 *= 2;
+            Console.WriteLine($"Show ertek, szorzás után: {height} Show refer, szorzás után: {refer.value}, Show ertek3 (out):{ertek3}");
+        }
+
+        
+        public void ShowOut(out int ertek3)
+        {
+            ertek3 = 10; //Mindenképpen kell értéket adni OUT használata esetén a változónak!
+
+        }
+
+
+        //Függvények paramétereinek alapértelmezett érték átadása
+
+        public void Show(int height = 10, int width = 7, string name = "név")
+        { 
+          
         }
 
 

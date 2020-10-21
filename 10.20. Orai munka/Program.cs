@@ -57,8 +57,6 @@ namespace _10._20.Orai_munka
             //Console.WriteLine(PlaneShapes1.Name);
 
 
-
-
             // 3. viselkedés
             // A viselkedést függvényeken keresztül szabályozzuk
             // A függvény neve és paramétere jelenti a függvényt szignatúráját
@@ -69,20 +67,84 @@ namespace _10._20.Orai_munka
 
             //3.2 Függvények paraméterátadása
 
-            //3.2.1 Érték szerinti átadás
-
+            //3.2.1 Érték szerinti átadás ///////////////////////////////////
+            Console.WriteLine("Érték szerinti átadás:");
             var ertek = 2;
             Console.WriteLine($"ertek: {ertek}");
             PlaneShapes1.Show(ertek);
             Console.WriteLine($"ertek: {ertek}");
+            ////////////////////////////////////////////////////////////////
 
-            //3.2.2 Paraméter szerinti átadás
+            Console.WriteLine();
+
+            //3.2.2 Referencia szerinti átadás //////////////////////////////
+            Console.WriteLine("Referencia szerinti átadás:");
+            var refer = new RefTyp() {value = 3};
+            Console.WriteLine($"ertek: {refer.value}");
+            PlaneShapes1.Show(refer);
+            Console.WriteLine($"ertek: {refer.value}");
+            ////////////////////////////////////////////////////////////////
+
+            Console.WriteLine();
+
+            //3.2.3 Átadás, több módszerrel /////////////////////////////////
+            Console.WriteLine("Érték + referencia szerinti átadás:");
+            refer = new RefTyp() { value = 3 };
+            Console.WriteLine($"ertek: {refer.value}");
+            PlaneShapes1.Show(ertek, refer);
+            Console.WriteLine($"ertek: {refer.value}");
+            ////////////////////////////////////////////////////////////////
+
+            Console.WriteLine();
+
+            //3.2.4 Érték átadása referencia szerint ///////////////////////
+            Console.WriteLine("Érték átadása referencia szerint:");
+            var ertek2 =2;
+            Console.WriteLine($"ertek2: {ertek2}");
+            PlaneShapes1.Show(ref ertek2);
+            Console.WriteLine($"ertek2: {ertek2}");
+            ////////////////////////////////////////////////////////////////
+
+            Console.WriteLine();
+
+
+            //3.2.5 OUT int, csak kifelé ad paramétert!//////////////////////
+           
+            Console.WriteLine("Out int érték átadása:");
+            PlaneShapes1.ShowOut(out int ertek3);
+            Console.WriteLine($"out int ertek3: {ertek3}");
+            /*
+              int ertek3;
+              PlaneShapes1.ShowOut(out ertek3);
+              Régi megoldás, most már referenciaként átadható az int, mint típus!!!
+            */
+
+            ////////////////////////////////////////////////////////////////
+            ///
+            Console.WriteLine();
+
+            //3.2.6 Átadás, több módszerrel /////////////////////////////////
+            Console.WriteLine("Érték + referencia + érték referencia szerinti + out int érték átadása:");
+            refer = new RefTyp() { value = 3 };
+            ertek2 = 4;
+            Console.WriteLine($"ertek: {ertek}, Referencia:{refer.value}, ertek2: {ertek2}, ertek3 (out):{ertek3}");
+            PlaneShapes1.Show(ertek, refer, ref ertek,out ertek3);
+            Console.WriteLine($"ertek: {ertek}, Referencia:{refer.value}, ertek2: {ertek2}, ertek3 (out):{ertek3}");
+            ////////////////////////////////////////////////////////////////
+
+            Console.WriteLine();
+
+            var a = 10;
+            var b = 2;
+            var c = "dfgd";
+
+            //Függvények paramétereinek alapértelmezett érték átadása
+            PlaneShapes1.Show(a,b,c);
+            PlaneShapes1.Show(width:4, name:"");
 
 
             Console.ReadLine();
       
-
-
         }
     }
 }

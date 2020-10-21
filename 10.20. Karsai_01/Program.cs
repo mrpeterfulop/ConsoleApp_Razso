@@ -184,22 +184,27 @@ namespace _10._20.Karsa_01
             var indexAtMax = haszon.ToList().IndexOf(haszon.Max()) + 1;
             var indexAtMin = haszon.ToList().IndexOf(haszon.Min()) + 1;
 
+            /*
+            
+            // Ha nem akarjuk használni az értékeket számként, nem szükséges deklarálni a változókat!
             var haszonMax = haszon.Max();
             var haszonMin = haszon.Min();
             var haszonAll = haszon.Sum();
 
-            var a = Convert.ToString(haszonMax);
-            var b = Convert.ToString(haszonMin);
-            var c = Convert.ToString(haszonAll);
+            var haszonAllString = tizedesOsztalyozas(haszonAll);
+            var haszonMaxString = tizedesOsztalyozas(haszonMax);
+            var haszonMinString = tizedesOsztalyozas(haszonMin);
+            */
+
+            var haszonAllString = tizedesOsztalyozas(haszon.Sum());
+            var haszonMaxString = tizedesOsztalyozas(haszon.Max());
+            var haszonMinString = tizedesOsztalyozas(haszon.Min());
 
 
-            c = tizedesOsztalyozas(c);
-            b = tizedesOsztalyozas(b);
-            a = tizedesOsztalyozas(a);
 
-            Console.WriteLine($"Összes bevételem az évben: {c} Ft\n" +
-            $"A legtöbb bevételem: {b} Ft, az év {indexAtMax}. napján.\n" +
-            $"A legkevesebb bevételem: {a} Ft, az év {indexAtMin}. napján.\n");
+            Console.WriteLine($"Összes bevételem az évben: {haszonAllString} Ft\n" +
+            $"A legtöbb bevételem: {haszonMaxString } Ft, az év {indexAtMax}. napján.\n" +
+            $"A legkevesebb bevételem: {haszonMinString} Ft, az év {indexAtMin}. napján.\n");
 
 
 
@@ -207,9 +212,12 @@ namespace _10._20.Karsa_01
 
         }
 
-        private static string tizedesOsztalyozas(string input)
+        private static string tizedesOsztalyozas(int input)
         {
-            var getLength = input.Length;
+
+            var a = Convert.ToString(input);
+
+            var getLength = a.Length;
             double muvelet = (double)getLength / 3;
             
             for (int i = 0; i < muvelet; i++)
@@ -218,12 +226,12 @@ namespace _10._20.Karsa_01
                 {
                     if (i != 0)
                     {
-                        input = input.Insert(getLength - i * 3, ".");
+                        a = a.Insert(getLength - i * 3, ".");
                     }
                 }
             }
 
-            return input;
+            return a;
         }
     }
 }

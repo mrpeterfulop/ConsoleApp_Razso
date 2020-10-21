@@ -46,6 +46,7 @@
     <Compile Include="PlaneShape.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RefTyp.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
