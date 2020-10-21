@@ -45,6 +45,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.20. Webuni - Generikusok
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.20. Orai munka", "10.20. Orai munka\10.20. Orai munka.csproj", "{79FFA208-FB3A-4399-81EC-A3AEDAD5A827}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.20. Webuni - filekezeles", "10.20. Webuni - filekezeles\10.20. Webuni - filekezeles.csproj", "{363AAC56-87A9-4884-AF7C-7CADF17A167A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.20. Webuni - Structure", "10.20. Webuni - Structure\10.20. Webuni - Structure.csproj", "{98C1A6DE-ADCE-45D9-81AB-92B1C2248724}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.20. Karsa_01", "10.20. Karsai_01\10.20. Karsa_01.csproj", "{B0ECC2A6-1999-4E12-82D1-1C9CFB20CEDE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -135,6 +141,18 @@ Global
 		{79FFA208-FB3A-4399-81EC-A3AEDAD5A827}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79FFA208-FB3A-4399-81EC-A3AEDAD5A827}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79FFA208-FB3A-4399-81EC-A3AEDAD5A827}.Release|Any CPU.Build.0 = Release|Any CPU
+		{363AAC56-87A9-4884-AF7C-7CADF17A167A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{363AAC56-87A9-4884-AF7C-7CADF17A167A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{363AAC56-87A9-4884-AF7C-7CADF17A167A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{363AAC56-87A9-4884-AF7C-7CADF17A167A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98C1A6DE-ADCE-45D9-81AB-92B1C2248724}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98C1A6DE-ADCE-45D9-81AB-92B1C2248724}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98C1A6DE-ADCE-45D9-81AB-92B1C2248724}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98C1A6DE-ADCE-45D9-81AB-92B1C2248724}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0ECC2A6-1999-4E12-82D1-1C9CFB20CEDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0ECC2A6-1999-4E12-82D1-1C9CFB20CEDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0ECC2A6-1999-4E12-82D1-1C9CFB20CEDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0ECC2A6-1999-4E12-82D1-1C9CFB20CEDE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

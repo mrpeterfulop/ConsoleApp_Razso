@@ -79,7 +79,6 @@ namespace _10._20.Orai_munka
             //3.2.2 Paraméter szerinti átadás
 
 
-
             Console.ReadLine();
       
 
