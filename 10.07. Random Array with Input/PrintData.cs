@@ -30,11 +30,6 @@ namespace _10._07.Random_Array_with_Input
             {
                 Console.Write($"{item},");
 
-                if (array.myArray[item] == array.myArray.Length-1)
-                {
-
-                }
-
 
             }
             Console.WriteLine("\n");

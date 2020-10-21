@@ -184,28 +184,15 @@ namespace _10._20.Karsa_01
             var indexAtMax = haszon.ToList().IndexOf(haszon.Max()) + 1;
             var indexAtMin = haszon.ToList().IndexOf(haszon.Min()) + 1;
 
-            /*
-            
-            // Ha nem akarjuk használni az értékeket számként, nem szükséges deklarálni a változókat!
-            var haszonMax = haszon.Max();
-            var haszonMin = haszon.Min();
-            var haszonAll = haszon.Sum();
-
-            var haszonAllString = tizedesOsztalyozas(haszonAll);
-            var haszonMaxString = tizedesOsztalyozas(haszonMax);
-            var haszonMinString = tizedesOsztalyozas(haszonMin);
-            */
-
-            var haszonAllString = tizedesOsztalyozas(haszon.Sum());
-            var haszonMaxString = tizedesOsztalyozas(haszon.Max());
-            var haszonMinString = tizedesOsztalyozas(haszon.Min());
-
-
+            string haszonAllString = tizedesOsztalyozas(haszon.Sum());
+            string haszonMaxString = tizedesOsztalyozas(haszon.Max());
+            string haszonMinString = tizedesOsztalyozas(haszon.Min());
 
             Console.WriteLine($"Összes bevételem az évben: {haszonAllString} Ft\n" +
             $"A legtöbb bevételem: {haszonMaxString } Ft, az év {indexAtMax}. napján.\n" +
             $"A legkevesebb bevételem: {haszonMinString} Ft, az év {indexAtMin}. napján.\n");
 
+ 
 
 
             Console.ReadLine();
