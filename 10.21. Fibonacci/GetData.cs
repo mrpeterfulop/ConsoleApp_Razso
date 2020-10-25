@@ -8,7 +8,10 @@ namespace _10._21.Fibonacci
 {
     public class GetData
     {
-        public int input;
+
+
+          
+        public int input;        
         bool loopGetData = true;
         bool loopTry = true;
 
@@ -19,12 +22,13 @@ namespace _10._21.Fibonacci
             {
                 try
                 {
+
                     do
                     {
-                        Console.WriteLine("Adj meg egy pozitív egész számot 2 és 40 között!");
+                       Console.WriteLine("Adj meg egy pozitív egész számot 1 és 40 között!");
                        input = Convert.ToInt32(Console.ReadLine());
 
-                        if (input > 40 || input < 2)
+                        if (input > 40 || input < 1)
                         {
                             ColorAlerts.colorRed();
                             Console.WriteLine("Hibásan megadott érték!");

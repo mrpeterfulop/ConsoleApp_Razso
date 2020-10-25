@@ -17,27 +17,50 @@ namespace _10._21.Fibonacci
             clearAllLists();
 
             int a = 0;
-            int b = 1;
+            int b = 0;
             int c = a + b;
 
-            ListShare.FibonacciList.Add(a);
-            ListShare.FibonacciList.Add(c);
+            //0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987 …
 
-            for (int i = 0; i < input - 3; i++)
+            if (input == 1)
             {
-                if (i == 0)
-                {
-                    a = i;
-                    b = i + 1;
-                    c = a + b;
-                    ListShare.FibonacciList.Add(c);
-                }
-                a = b;
-                b = c;
+                
+                a = 0;
+                b = 0;
                 c = a + b;
                 ListShare.FibonacciList.Add(c);
+                
             }
+            else
+            {
+                for (int i = 0; i < input; i++)
+                {
+                    if (i == 0)
+                    {
+                        a = 0;
+                        b = 0;
+                        c = a + b;
+                        ListShare.FibonacciList.Add(c);
 
+                    }
+                    else if (i == 1)
+                    {
+                        a = 0;
+                        b = 1;
+                        c = a + b;
+                        ListShare.FibonacciList.Add(c);
+                        b = 0;
+                    }
+
+                    else if (i > 1)
+                    {
+                        a = b;
+                        b = c;
+                        c = a + b;
+                        ListShare.FibonacciList.Add(c);
+                    }
+                }
+            }
         }
 
         private static void clearAllLists()
