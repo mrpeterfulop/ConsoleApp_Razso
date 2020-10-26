@@ -53,6 +53,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.20. Karsa_01", "10.20. K
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.21. Fibonacci", "10.21. Fibonacci\10.21. Fibonacci.csproj", "{113DAC07-B57D-4712-BB24-BC3E4C702F29}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.26. Fibonacci", "10.26. Fibonacci\10.26. Fibonacci.csproj", "{A3459895-FB79-4ED5-A642-A9B361ECFD3A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -159,6 +161,10 @@ Global
 		{113DAC07-B57D-4712-BB24-BC3E4C702F29}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{113DAC07-B57D-4712-BB24-BC3E4C702F29}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{113DAC07-B57D-4712-BB24-BC3E4C702F29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3459895-FB79-4ED5-A642-A9B361ECFD3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3459895-FB79-4ED5-A642-A9B361ECFD3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3459895-FB79-4ED5-A642-A9B361ECFD3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3459895-FB79-4ED5-A642-A9B361ECFD3A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
