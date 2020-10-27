@@ -55,6 +55,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.21. Fibonacci", "10.21. 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.26. Fibonacci", "10.26. Fibonacci\10.26. Fibonacci.csproj", "{A3459895-FB79-4ED5-A642-A9B361ECFD3A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.26. PhotoSearchApp", "10.26. PhotoSearchApp\10.26. PhotoSearchApp.csproj", "{C54EF9B9-815D-4E1E-A04C-75B76A97EDC0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -165,6 +167,10 @@ Global
 		{A3459895-FB79-4ED5-A642-A9B361ECFD3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3459895-FB79-4ED5-A642-A9B361ECFD3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A3459895-FB79-4ED5-A642-A9B361ECFD3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C54EF9B9-815D-4E1E-A04C-75B76A97EDC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C54EF9B9-815D-4E1E-A04C-75B76A97EDC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C54EF9B9-815D-4E1E-A04C-75B76A97EDC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C54EF9B9-815D-4E1E-A04C-75B76A97EDC0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

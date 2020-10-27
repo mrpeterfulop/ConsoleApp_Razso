@@ -13,7 +13,6 @@ namespace _10._09.String_methods
         {
 
 
-
             //1. Substring metódus
 
             //Substrin metódus: A zárójelben megadott értéktől kezdi a tömb elemeinek felsorolását. Jelen esetben a string, szöveg tartalmának megjeleíntése az 5. karaktertől kezdődik! Számolás a tömbök logikája alapján, 0-tól! 
@@ -62,7 +61,7 @@ namespace _10._09.String_methods
 
 
 
-            
+
 
 
 
@@ -73,11 +72,9 @@ namespace _10._09.String_methods
             }
             */
 
-            
-            var inputPatch = new InputPatch();
 
-            inputPatch.loopPatch();
-            
+
+            Console.ReadKey();
 
             //Console.WriteLine($"A tömb elemeinek száma:{ extensionFile.Length}");
             //Console.WriteLine($"A tömb elemei:");

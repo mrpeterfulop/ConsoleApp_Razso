@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B6DB9967-1AAE-4600-A1CC-101D22C55853}</ProjectGuid>
+    <ProjectGuid>{C54EF9B9-815D-4E1E-A04C-75B76A97EDC0}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_10._12.Select_and_Copy_files</RootNamespace>
-    <AssemblyName>_10._12.Select_and_Copy_files</AssemblyName>
+    <RootNamespace>_10._26.PhotoSearchApp</RootNamespace>
+    <AssemblyName>_10._26.PhotoSearchApp</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,11 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CopyTheFiles.cs" />
-    <Compile Include="LoadClientFiles.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SyncArray.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
