@@ -51,23 +51,9 @@ namespace _10._12.Select_and_Copy_files
 
             catch (IOException)
             {
-                Console.WriteLine($"\nA file már szerepel a célkönyvtárban!");
-                Console.WriteLine($"Szeretnéd felülírni az összes lehetséges ütközést? Igen = 'Y', Nem = 'X'");
-                var ans = Console.ReadLine();
-                if (ans.ToUpper() == "Y")
-                {
-
-                }
-                if (ans.ToUpper() == "X")
-                {
-
-                }
-
+ 
             }
-            /*catch (Exception)
-            {
-                Console.WriteLine($"\nHiba! Lehet hogy felcserélted a fileok elérési útvonalát!");
-            }*/
+
 
             Console.ReadKey();
         }
