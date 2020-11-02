@@ -1,0 +1,147 @@
+/// ÖRÖKLŐDÉSEK
+
+/// Az Ősosztály és a származtatott osztály is public jelzővel ellátott metódust tartalmaz.
+/// Árnyékolás(shadow) jön létre, az ősosztály műveletét felülírja a származtatott osztály metódusa!
+/// A metódusok megkülönböztetésére a virtual és override jelzőket használjuk! Ha ezeket a paramétereket hozzáadjuk a metódus létrehozásakor, a program meg tudja különböztetni a 2 metódust. 
+/// Virtual és override használata esetén a jelölt metódusok láthatósági paraméterének, és szignatúrájának meg kell egyezni! (public == public)
+
+
+
+/// ------------------------------ A eset -------------------------------- ///
+
+Ososztlay
+{
+ public void Muvelet(){
+  Console.WriteLine("Ősosztály alapművelet.");
+ }
+}
+
+Szarmazo : Ososztaly
+{
+  public void Muvelet(){
+  Console.WriteLine("Származtatott osztály, alapművelet.");
+ }
+}
+
+/// Console: "Származtatott osztály, alapművelet."
+
+
+/// ------------------------------ B eset -------------------------------- ///
+/// Az override használata a következő származtatott osztályra nézve egyben virtual is, tehát ha a következő osztály az aktuálisból származik, elég csak az override használata, hogy ismét felülbíráljuk az "ősoztály" metódusát!
+
+
+Ososztlay
+{
+ public void Muvelet(){
+  Console.WriteLine("Ősosztály alapművelet.");
+ }
+}
+
+Szarmazo : Ososztaly
+{
+  public void Muvelet(){
+  Console.WriteLine("Származtatott osztály, alapművelet.");
+ }
+}
+
+SzarmazoMasodik : Szarmazo 
+{
+  public void Muvelet(){
+  Console.WriteLine("Származtatott második osztály, alapművelet.");
+ }
+}
+
+/// Console: "Származtatott második osztály, alapművelet."
+
+
+
+//////////////////////////////////////////////////////////////////////////////
+
+
+// Ha nem használunk megkülönböztető jelölést, és a 2 osztály metódusának láthatósága sem egyezik, akkor az kerül meghívásra, amelyik public!!
+}
+/// ------------------------------ A eset -------------------------------- ///
+
+Ososztlay
+{
+ public void Muvelet(){
+  Console.WriteLine("Ősosztály alapművelet.");
+ }
+}
+
+Szarmazo : Ososztaly
+{
+  private void Muvelet(){
+  Console.WriteLine("Származtatott osztály, alapművelet.");
+ }
+}
+
+/// Console:"Ősosztály alapművelet."
+
+/// ------------------------------ B eset -------------------------------- ///
+
+Ososztlay
+{
+ private void Muvelet(){
+  Console.WriteLine("Ősosztály alapművelet.");
+ }
+}
+
+Szarmazo : Ososztaly
+{
+  public void Muvelet(){
+  Console.WriteLine("Származtatott osztály, alapművelet.");
+ }
+}
+
+/// Console: "Származtatott osztály, alapművelet."
+
+//////////////////////////////////////////////////////////////////////////////
+
+/// A helyes jelölés így nézne ki: 
+
+Ososztlay
+{
+ public virtual void Muvelet(){
+  Console.WriteLine("Ősosztály alapművelet.");
+ }
+}
+
+Szarmazo : Ososztaly
+{
+  public override void Muvelet(){
+  Console.WriteLine("Származtatott osztály, alapművelet.");
+ }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/// Nem készíthető példány, mivel Private az ősosztály metódusa!
+
+Ososztlay
+{
+ private virtual void Muvelet(){
+  Console.WriteLine("Ősosztály alapművelet.");
+ }
+}
+
+Szarmazo : Ososztaly
+{
+  public override void Muvelet(){
+  Console.WriteLine("Származtatott osztály, alapművelet.");
+ }
+}
+
+//////////////////////////////////////////////////////////////////////////////
+

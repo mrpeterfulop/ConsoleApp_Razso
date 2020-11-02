@@ -73,6 +73,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.30. Karsa_06 Structs", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.30. Karsa_07 gyakorlat", "10.30. Karsa_07 gyakorlat\10.30. Karsa_07 gyakorlat.csproj", "{235C3F92-13B6-44C0-BDFC-43B560CCE324}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11.01. Karsa_08 Classes", "11.01. Karsa_08 Classes\11.01. Karsa_08 Classes.csproj", "{26DA7DBE-D4F6-425D-986D-40970C6D338B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11.01. Karsa_09 override, virtual, new, sealed", "11.01. Karsa_09 override, virtual, new, sealed\11.01. Karsa_09 override, virtual, new, sealed.csproj", "{36BE7778-66AF-46AF-AC4F-79DC1D39EF99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11.01. Karsa_10 Késői, korai kötés, polimorfizmus", "11.01. Karsa Késői, korai kötés, polimorfizmus\11.01. Karsa_10 Késői, korai kötés, polimorfizmus.csproj", "{A53578E2-F379-4682-B069-D9C789E55096}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11.02. Karsa_11 partialClass, Interface", "11.02. Karsa_11 partialClass, Interface\11.02. Karsa_11 partialClass, Interface.csproj", "{8C18B07A-97D0-4137-AB51-F7629A4CE1C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11.02. C_book page 159", "11.02. C_book page 159\11.02. C_book page 159.csproj", "{076E6BFE-C719-4F30-B743-E78AD118A7BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -219,6 +229,26 @@ Global
 		{235C3F92-13B6-44C0-BDFC-43B560CCE324}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{235C3F92-13B6-44C0-BDFC-43B560CCE324}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{235C3F92-13B6-44C0-BDFC-43B560CCE324}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26DA7DBE-D4F6-425D-986D-40970C6D338B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26DA7DBE-D4F6-425D-986D-40970C6D338B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26DA7DBE-D4F6-425D-986D-40970C6D338B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26DA7DBE-D4F6-425D-986D-40970C6D338B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36BE7778-66AF-46AF-AC4F-79DC1D39EF99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36BE7778-66AF-46AF-AC4F-79DC1D39EF99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36BE7778-66AF-46AF-AC4F-79DC1D39EF99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36BE7778-66AF-46AF-AC4F-79DC1D39EF99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A53578E2-F379-4682-B069-D9C789E55096}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A53578E2-F379-4682-B069-D9C789E55096}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A53578E2-F379-4682-B069-D9C789E55096}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A53578E2-F379-4682-B069-D9C789E55096}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C18B07A-97D0-4137-AB51-F7629A4CE1C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C18B07A-97D0-4137-AB51-F7629A4CE1C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C18B07A-97D0-4137-AB51-F7629A4CE1C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C18B07A-97D0-4137-AB51-F7629A4CE1C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{076E6BFE-C719-4F30-B743-E78AD118A7BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{076E6BFE-C719-4F30-B743-E78AD118A7BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{076E6BFE-C719-4F30-B743-E78AD118A7BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{076E6BFE-C719-4F30-B743-E78AD118A7BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
