@@ -10,7 +10,6 @@ namespace _10._26.Fibonacci
     {
         static void Main(string[] args)
         {
-
             GetData get = new GetData();
             Operation op = new Operation();
             var loop = true;
@@ -36,7 +35,6 @@ namespace _10._26.Fibonacci
                     loop = false;
                 }
             }
-
             return loop;
         }
 

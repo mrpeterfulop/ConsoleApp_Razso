@@ -71,24 +71,24 @@ namespace _10._26.Fibonacci
             for (int i = 0; i < FibonacciList.Count; i++)
             {
 
-                if (FibonacciList[i] % 2 == 0)
+                if (FibonacciList[i] % 2 == 0 && FibonacciList[i] != 0)
                 {
                     FibonacciEven.Add(FibonacciList[i]);
                 }
-                else
+                else if(FibonacciList[i] != 0)
                 {
                     FibonacciOdd.Add(FibonacciList[i]);
                 }
             }
 
-            Console.WriteLine($"A lekért {input} szám közül {FibonacciEven.Count-1} páros, 1 db nulla:");
+            Console.WriteLine($"A lekért {input} szám közül 1 db ='0', és {FibonacciEven.Count}db páros:");
 
             Color.Blue();
             Console.WriteLine(string.Join(",", FibonacciEven));
             Color.White();
             Console.WriteLine();
 
-            Console.WriteLine($"A lekért {input} szám közül {FibonacciOdd.Count} páratlan:");
+            Console.WriteLine($"A lekért {input} szám közül {FibonacciOdd.Count} db páratlan:");
             Color.Blue();
             Console.WriteLine(string.Join(",", FibonacciOdd));
             Color.White();
