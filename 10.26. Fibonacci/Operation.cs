@@ -60,8 +60,16 @@ namespace _10._26.Fibonacci
             }
 
             Console.WriteLine($"A Fibonacci sorozat első {input} eleme a következő:");
-            Color.Green();
-            Console.WriteLine(string.Join(",", FibonacciList));
+
+            Random rnd = new Random();
+
+            foreach (var item in FibonacciList)
+            {
+                var setColor = rnd.Next(1, 16);
+                Console.Write(item + " ");
+                Console.ForegroundColor = ((ConsoleColor)setColor);
+            }
+
             Color.White();
             Console.WriteLine();
         }
