@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace _10._26.Fibonacci
 {
 
+
     class Program
     {
         static void Main(string[] args)
@@ -41,7 +42,6 @@ namespace _10._26.Fibonacci
 
         private static void loopProgram(GetData get, Operation op)
         {
-
             int input = get.getData();
             op.clearLists();
             op.Do(input);

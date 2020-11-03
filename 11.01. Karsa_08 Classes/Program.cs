@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 namespace _11._01.Karsa_08_Classes
 {
 
+
+
     class Craft
     {
         public int speed;

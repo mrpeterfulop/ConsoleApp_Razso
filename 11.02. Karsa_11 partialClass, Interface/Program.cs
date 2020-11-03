@@ -205,7 +205,6 @@ namespace _11._02.Karsa_11_partialClass__Interface
                Console.WriteLine($"{name} {type} embert rág...");
             }
         }
-
     }
 
 
@@ -231,7 +230,6 @@ namespace _11._02.Karsa_11_partialClass__Interface
         {
             public Dog(string name) : base(name)
             {
-
             }
         }
 
@@ -239,7 +237,6 @@ namespace _11._02.Karsa_11_partialClass__Interface
         {
             public Crocodile(string name) : base(name)
             {
-
             }
         }
     }
@@ -253,12 +250,10 @@ namespace _11._02.Karsa_11_partialClass__Interface
         {
             Console.WriteLine(a+b);
         }
-
     }
 
     class Oszt : Alap
     {
-
         public override int osztas()
         {
             Console.WriteLine("Hello");

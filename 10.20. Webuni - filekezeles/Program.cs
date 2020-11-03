@@ -30,7 +30,7 @@ namespace _10._20.Webuni___filekezeles
             // UTF-8 2,3,4 változó hsszúságú karakterkódolás
 
 
-            StreamWriter sw = new StreamWriter(@"d:\IT\bevasarlolista.txt");
+            StreamWriter sw = new StreamWriter(@"C:\text\bevasarlolista.txt");
 
             foreach (var item in shoppingList)
             {
@@ -40,7 +40,7 @@ namespace _10._20.Webuni___filekezeles
             sw.Flush();
             sw.Close();
 
-            StreamReader sr = new StreamReader(@"d:\IT\bevasarlolista.txt", Encoding.UTF8);
+            StreamReader sr = new StreamReader(@"C:\text\bevasarlolista.txt", Encoding.UTF8);
 
             while (!sr.EndOfStream)
             {
