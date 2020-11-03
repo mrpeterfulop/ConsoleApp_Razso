@@ -18,7 +18,7 @@ namespace _10._26.Fibonacci
         { Console.ForegroundColor = ConsoleColor.Red; }
 
         public static void Blue()
-        { Console.ForegroundColor = ConsoleColor.DarkBlue; }
+        { Console.ForegroundColor = ConsoleColor.Blue; }
 
         public static void Magenta()
         { Console.ForegroundColor = ConsoleColor.Magenta; }

@@ -16,7 +16,6 @@ namespace _10._29.Karsa_04
             Elephant,
             Leon,
             Crocodile,
-
         }
 
         enum abc
@@ -24,7 +23,11 @@ namespace _10._29.Karsa_04
             A,B,C,D,E,F,G,H
         }
 
-        enum linux { Ubuntu, Mint, Debian, Lubuntu, Xubuntu, openSuse}
+        enum linux { 
+            Ubuntu,Mint,Debian,Lubuntu,Xubuntu,openSuse
+        }
+
+
         enum myMenu
         {
             Belépés,
@@ -34,16 +37,24 @@ namespace _10._29.Karsa_04
         };
         static void Main(string[] args)
         {
-            /*
+
+
+
+
+
+
             Console.WriteLine("Adj meg egy számot:");
             int index = int.Parse(Console.ReadLine());
 
             Animals a = Animals.Elephant;
 
+            Console.WriteLine((ConsoleColor)5);
+
+            Console.WriteLine();
+
             Console.WriteLine((abc)index);
             Console.WriteLine((int)a);
             Console.WriteLine(a);
-
 
             linux[] l = (linux[])Enum.GetValues(typeof(linux));
 
@@ -123,6 +134,7 @@ namespace _10._29.Karsa_04
             } while (fail);
 
             */
+
             Random rnd = new Random();
 
             List<int> myList = new List<int>();

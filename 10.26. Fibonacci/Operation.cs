@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace _10._26.Fibonacci
 {
+
     class Operation {
 
         List<int> FibonacciList = new List<int>();
@@ -14,8 +15,6 @@ namespace _10._26.Fibonacci
 
         public void Do(int input)
         {
-            //0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, 10946, 17711, 28657, 46368, 75025, 121393, 196418, 317811, 514229, 832040, 1346269, 2178309, 3524578, 5702887, 9227465, …
-
             int a = 0;
             int b = 0;
             int c = a + b;
@@ -60,10 +59,18 @@ namespace _10._26.Fibonacci
             }
 
             Console.WriteLine($"A Fibonacci sorozat első {input} eleme a következő:");
-            Color.Green();
-            Console.WriteLine(string.Join(",", FibonacciList));
+
+            Random rnd = new Random();
+
+            foreach (var item in FibonacciList)
+            {
+                var setColor = rnd.Next(1, 16);
+                Console.Write(item +" ");
+                Console.ForegroundColor = ((ConsoleColor)setColor);
+            }
+
             Color.White();
-            Console.WriteLine();
+            Console.WriteLine("\n");
         }
 
         public void selectData(int input)

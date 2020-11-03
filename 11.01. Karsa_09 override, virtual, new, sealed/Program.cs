@@ -6,6 +6,32 @@ using System.Threading.Tasks;
 
 namespace _11._01.Karsa_09_override__virtual__new__sealed
 {
+
+     public abstract class EP
+    {
+        int a = 10;
+        int b = 10;
+
+        public int start() {
+
+            return a;
+        }
+    }
+
+    interface IPlane
+    {
+        int PlanseProgram();
+    }
+
+
+    public class MainClass : EP
+    {
+
+    }
+
+
+
+
     class Program //override, virtual, new, sealed
     {
         // virtual: Az ősoztályban adjuk meg anná la metódusnál, ami szintén szerepel később a származtatott osztályokban is! Ez alapján határozzuk meg, hogy melyik metódus fogja felülírni az alosztály. 

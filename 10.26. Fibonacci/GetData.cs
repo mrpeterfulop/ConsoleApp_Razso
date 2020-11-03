@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace _10._26.Fibonacci
 {
 
-    class GetData
+    public class GetData
     {
         public int getData()
         {
