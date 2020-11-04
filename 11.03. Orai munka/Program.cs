@@ -12,12 +12,7 @@ namespace _11._03.Orai_munka
     public class ListOperation
     {
 
-
-
     }
-
-
-
 
     class Program
     {
@@ -39,15 +34,12 @@ namespace _11._03.Orai_munka
             Console.WriteLine(Msg1);
             string input = Console.ReadLine();
 
-
             while (!int.TryParse(input, out int num) || num <= 0 || Int32.MaxValue <= num)
             {
                 Console.WriteLine(Msg1);
                 input = Console.ReadLine();
             }
             return Convert.ToInt32(input);
-
-
         }
 
         public static void fillList(int input, List <int> Numbers)
