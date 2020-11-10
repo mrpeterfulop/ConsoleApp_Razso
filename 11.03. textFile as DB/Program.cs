@@ -49,7 +49,6 @@ namespace _11._03.textFile_as_DB
 
             var rm = new RunMethodes();
 
-
             FileStream fs = new FileStream(@"C:\Users\mrpet\Documents\UsersDatabase.xlog", FileMode.Open);
             StreamReader sr = new StreamReader(fs, Encoding.UTF8);
 

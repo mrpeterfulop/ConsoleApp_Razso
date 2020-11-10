@@ -22,7 +22,6 @@ namespace _10._30.Karsa_05__Filekezeles
             sw.WriteLine("Banán");
             sw.WriteLine("Dinnye");
 
-
             StreamReader sr = new StreamReader(@"pc_list.txt");  //Alapesetben 1 sort olvas be.
             string list = sr.ReadLine();
             Console.WriteLine(list);
@@ -35,8 +34,8 @@ namespace _10._30.Karsa_05__Filekezeles
                 readList.Add(listEndOf);
             }
 
-            Console.WriteLine(string.Join("\n",readList));
 
+            Console.WriteLine(string.Join("\n",readList));
 
             sw.Flush(); //Puffer ürítése
             sw.Close(); // bezárása a filebaírás folyamatnak
