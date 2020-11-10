@@ -27,7 +27,6 @@ namespace _11._03.textFile_as_DB
             return answer;
 
 
-
         }
     }
 
