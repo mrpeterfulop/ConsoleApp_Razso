@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+
+
 namespace _10._09.String_methods
 {
     internal class InputPatch

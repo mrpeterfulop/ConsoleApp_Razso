@@ -11,7 +11,6 @@ namespace _10._12.Select_and_Copy_files
     public class SyncArrays
     {
         
-
         public List <string> syncArrays(string[] neededFiles, string rootPath) //PART 2.
         {
 
