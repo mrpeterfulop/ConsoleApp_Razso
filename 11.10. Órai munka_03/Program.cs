@@ -39,6 +39,7 @@ namespace _11._10.Órai_munka_03
                     {
                         var line = sr.ReadLine();
                         Console.WriteLine(line);
+
                     }
                 }
             }
