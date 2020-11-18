@@ -101,6 +101,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11.11. Orai munka", "11.11.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11.17. 4. Meteorológiai jelentes", "11.17. 4. Meteorológiai jelentes\11.17. 4. Meteorológiai jelentes.csproj", "{E89F787D-6B1E-4ED3-9BF8-3852FF0497B2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11.17. Karsa_13  Delegate, event", "11.17. Karsa_13  Delegate, event\11.17. Karsa_13  Delegate, event.csproj", "{DA640779-EB37-4F8A-B1C1-283532BF7890}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -303,6 +305,10 @@ Global
 		{E89F787D-6B1E-4ED3-9BF8-3852FF0497B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E89F787D-6B1E-4ED3-9BF8-3852FF0497B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E89F787D-6B1E-4ED3-9BF8-3852FF0497B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA640779-EB37-4F8A-B1C1-283532BF7890}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA640779-EB37-4F8A-B1C1-283532BF7890}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA640779-EB37-4F8A-B1C1-283532BF7890}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA640779-EB37-4F8A-B1C1-283532BF7890}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
