@@ -103,6 +103,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11.17. 4. Meteorológiai je
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11.17. Karsa_13  Delegate, event", "11.17. Karsa_13  Delegate, event\11.17. Karsa_13  Delegate, event.csproj", "{DA640779-EB37-4F8A-B1C1-283532BF7890}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11.18. Karsa_14 DateTime", "11.18. Karsa_14 DateTime\11.18. Karsa_14 DateTime.csproj", "{9D26400A-8CCB-4450-82DA-20A8CB2FA156}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11.18. Karsa_15  Path, Directory, File", "11.18. Karsa_15  Path, Directory, File\11.18. Karsa_15  Path, Directory, File.csproj", "{5D3854F5-3227-44CE-BB9A-F07B45C5FF78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11.19. Crypt", "11.19. Crypt\11.19. Crypt.csproj", "{C0D7633B-CE9B-45A4-A43E-107FAD207BBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11.19. DateRecoveryApp", "11.19. DateRecoveryApp\11.19. DateRecoveryApp.csproj", "{3C9C33DB-FECE-4AFD-B782-83557F9CB336}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -309,6 +317,22 @@ Global
 		{DA640779-EB37-4F8A-B1C1-283532BF7890}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA640779-EB37-4F8A-B1C1-283532BF7890}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA640779-EB37-4F8A-B1C1-283532BF7890}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D26400A-8CCB-4450-82DA-20A8CB2FA156}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D26400A-8CCB-4450-82DA-20A8CB2FA156}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D26400A-8CCB-4450-82DA-20A8CB2FA156}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D26400A-8CCB-4450-82DA-20A8CB2FA156}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D3854F5-3227-44CE-BB9A-F07B45C5FF78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D3854F5-3227-44CE-BB9A-F07B45C5FF78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D3854F5-3227-44CE-BB9A-F07B45C5FF78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D3854F5-3227-44CE-BB9A-F07B45C5FF78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0D7633B-CE9B-45A4-A43E-107FAD207BBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0D7633B-CE9B-45A4-A43E-107FAD207BBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0D7633B-CE9B-45A4-A43E-107FAD207BBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0D7633B-CE9B-45A4-A43E-107FAD207BBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C9C33DB-FECE-4AFD-B782-83557F9CB336}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C9C33DB-FECE-4AFD-B782-83557F9CB336}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C9C33DB-FECE-4AFD-B782-83557F9CB336}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C9C33DB-FECE-4AFD-B782-83557F9CB336}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -9,7 +9,13 @@ namespace _11._11.Orai_munka
 {
     public class Tavirat
     {
+
+        public Tavirat()
+        {
+        }
+
         public static List<Tavirat> tElements = new List<Tavirat>();
+        public static List<string> Cities = new List<string>();
 
         private string station;
         private string time;
@@ -44,131 +50,68 @@ namespace _11._11.Orai_munka
             set{temp = value;}
         }
 
-        public string TempFormatShow(int tmp)
-        {
-            string celsius = "";
-            if (tmp != 0)
-            {
-                celsius = Convert.ToString(tmp);
-            }
-            return Convert.ToString(tmp) + "°C";
-        }
-        
-        /*
-        public string DowFormatShow(string dw)
-        {
-            if (dow != "err")
-            {
-                if (dow.Substring(0, 3) == "VRB")
-                {
-                    dw = dow.Substring(0, 3) + ", " + dow.Substring(3);
-                }
-                else
-                {
-                    if (dow[0] != '0')
-                    {
-                        dw = dow.Substring(0, 3) + "°, " + dow.Substring(3);
-                    }
-                    else
-                    {
-                        if (dow[0] == '0' && dow[1] != '0')
-                        {
-                            var a = dow.Substring(0, 3);
-                            var b = a.Substring(1);
-                            dw = b + "° " + dow.Substring(3);
-                        }
-                        if (dow[0] == '0' && dow[1] == '0' && dow[2] != '0')
-                        {
-                            var a = dow.Substring(0, 3);
-                            var b = a.Substring(2);
-                            dw = b + "° " + dow.Substring(3);
-                        }
-                        if (dow[0] == '0' && dow[1] == '0' && dow[2] == '0')
-                        {
-                            dw = 0 + "°, " + dow.Substring(3);
-                        }
-
-                    }
-                }
-            }
-            return dw;
-        }
-        */
-
+        //IDŐ FORMÁTUM GENERÁLÁSA (00:00)
         public string TimeFormatShow(string tm)
         {
-            return TimeFormatSh(tm);
-        }
-        public static string TimeFormatSh(string tm)
-        {
-            if (tm != "err")
-            {
-                tm = tm.Substring(0, 2) + ":" + tm.Substring(2);
-            }
-            return tm;
+            return tm = tm.Substring(0, 2) + ":" + tm.Substring(2);
         }
 
-        /*
-        public static void ShowListItemsSimple()
+
+        // 1. FELADAT
+        public static void ReadDataFromTXT()
         {
-            Console.WriteLine("Az importált lista formázott tartalma:\n");
-            foreach (var item in tElements)
+            string filePath = "tavirathu13.txt";
+
+            FileStream fs = new FileStream(filePath, FileMode.Open);
+            StreamReader sr = new StreamReader(fs, Encoding.Default);
+
+            while (!sr.EndOfStream)
             {
-                Console.WriteLine(item.Station + " " + item.Time + " " + item.Dow + " " + item.Temp);
+                string[] puffer = sr.ReadLine().Split(' ');
+                string a = puffer[0];
+                string b = puffer[1];
+                string c = puffer[2];
+                int d = Convert.ToInt32(puffer[3]);
+                Tavirat temp = new Tavirat(a, b, c, d);
+                Tavirat.tElements.Add(temp);
             }
-        }*/
-        /*
-        public static void ShowListItems()
-        {
-            Console.WriteLine("Az importált lista teljes, formázott tartalma:\n");
-            foreach (Tavirat item in tElements)
-            {
-                ShowFormatedLines(item);
-            }
-        }*/
-        /*
-        public static void ShowFormatedLines(Tavirat item)
-        {
-            if (item.Station == "err" || item.Time == "err" || item.Dow == "err" || item.Temp == 0)
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-            }
-            Console.WriteLine(item.Station + " " + item.TimeFormatShow(item.Time) + " " + item.DowFormatShow(item.Dow) + " " + item.TempFormatShow(item.Temp));
-            Console.ForegroundColor = ConsoleColor.White;
+
+            sr.Close();
+            fs.Close();
+
         }
-        */
-        /*
-        public static void GetCityAllData()
-        {
-            Console.WriteLine("\nAdd meg a város kódját:");
-            string userData = Console.ReadLine().ToUpper();
 
-            while (userData.Length != 2)
+            // 1.1 Városnevek kigyűjtése listába, hogy bekérésnél lehessen valami alapján ellenőrizni az adatokat.
+            public static void createCityList()
             {
-                Console.WriteLine("Add meg a város kódját:");
-                userData = Console.ReadLine();
+                // List<string> Cities = new List<string>();
 
-            }
-
-            var counter = 0;
-            foreach (Tavirat item in tElements)
-            {
-                if (userData == item.Station)
+                foreach (var item in tElements)
                 {
-                    ShowFormatedLines(item);
-                    counter++;
+                    if (!(Cities.Contains(item.Station)))
+                    {
+                        Cities.Add(item.Station);
+                    }
                 }
-            }
-            if (counter == 0)
-            {
-                Console.WriteLine("Sajnos nincs a keresésnek megfelelő adat!");
-            }
-        }*/
 
+
+                // return Cities;
+            }
+
+        // 2. FELADAT
         public static void GetLastMeasurementMoment()
         {
-            Console.WriteLine("Add meg a város kódját, az utolsó mérési adathoz:");
+            Console.Write("Adja meg egy település kódját! Település:");
             string userData = Console.ReadLine().ToUpper();
+
+
+            while (!Cities.Contains(userData))
+            {
+                Console.WriteLine("A kfiejezés nem szerepel a városkódok között!\nAz alábbiak közül tudsz váalsztani:");
+                Console.WriteLine(string.Join(", ", Cities));
+                Console.Write("\nAdja meg egy település kódját! Település:");
+                userData = Console.ReadLine().ToUpper();
+            }
 
             int maximumNumber = 0;
 
@@ -176,52 +119,75 @@ namespace _11._11.Orai_munka
             {
                 if (userData == item.Station)
                 {
-                    while (item.Time != "err" && maximumNumber < Convert.ToInt32(item.Time))
+                    while (maximumNumber < Convert.ToInt32(item.Time))
                     {
                         maximumNumber = Convert.ToInt32(item.Time);
                     }
                 }
             }
+           
+            Tavirat tv = new Tavirat();
+            string tm = Convert.ToString(maximumNumber);
 
-            var tm = Convert.ToString(maximumNumber);
-            Console.Clear();
-            Console.WriteLine($"Az utolsó mérési adat {userData} településről {TimeFormatSh(tm)} időpontban érkezett!\n");
+           // Console.Clear();
+            Console.WriteLine($"Az utolsó mérési adat {userData} településről {tv.TimeFormatShow(tm)} időpontban érkezett!\n");
+
 
         }
+
+        // 3. FELADAT
         public static void GetMaxMinTemperature()
         {
             var maxValue = 0;
             var minValue = 1000;
 
-            List<Tavirat> maxTemp = new List<Tavirat>();
-            List<Tavirat> minTemp = new List<Tavirat>();
+            //List<Tavirat> maxTemp = new List<Tavirat>(); // Megoldás listával
+            //List<Tavirat> minTemp = new List<Tavirat>(); // Megoldás listával
+
+            Tavirat[] maxTemp = new Tavirat[1]; // Megoldás tömbbel
+            Tavirat[] minTemp = new Tavirat[1]; // Megoldás tömbbel
 
             foreach (Tavirat item in tElements)
             {
 
-                while (item.Temp != 0 && maxValue < item.Temp)
+                while (maxValue < item.Temp)
                 {
-                    maxTemp.Clear();
+                    // Megoldás listával
+                    //maxTemp.Clear();
+                    //maxValue = item.Temp;
+                    //Tavirat op = new Tavirat(item.Station, item.Time, item.Dow, item.Temp);
+                    //maxTemp.Add(op);
+
+                    // Megoldás tömbbel
                     maxValue = item.Temp;
                     Tavirat op = new Tavirat(item.Station, item.Time, item.Dow, item.Temp);
-                    maxTemp.Add(op);
+                    maxTemp[0] = op;
                 }
 
-                while (item.Temp != 0 && minValue > item.Temp)
+                while (minValue > item.Temp)
                 {
-                    minTemp.Clear();
+                    // Megoldás listával
+                    //minTemp.Clear();
+                    //minValue = item.Temp;
+                    //Tavirat op = new Tavirat(item.Station, item.Time, item.Dow, item.Temp);
+                    //minTemp.Add(op);
+
+                    // Megoldás tömbbel
                     minValue = item.Temp;
                     Tavirat op = new Tavirat(item.Station, item.Time, item.Dow, item.Temp);
-                    minTemp.Add(op);
-                }
+                    minTemp[0] = op;
 
+                }
             }
+
             Console.Write($"A minimum hőmrséklet: ");
             Console.WriteLine($"{minTemp[0].Station} {minTemp[0].TimeFormatShow(minTemp[0].Time)} {minTemp[0].Temp} fok");
             Console.Write($"A maximum hőmrséklet: ");
             Console.WriteLine($"{maxTemp[0].Station} {maxTemp[0].TimeFormatShow(maxTemp[0].Time)} {maxTemp[0].Temp} fok\n");
 
-        }
+        } 
+
+        // 4. FELADAT
         public static void GetZeroWind()
         {
             List<Tavirat> zeroWind = new List<Tavirat>();
@@ -250,13 +216,19 @@ namespace _11._11.Orai_munka
             }
 
         }
+
+
+        // 5. FELADAT
         public static void GetMedTempAndFluct()
         {
-            List<string> Cities = createCityList();
+
+            // Ideiglenes, középhőmérsékleti adatokat tároló lista létrehozása
             List<Tavirat> MedTempList = new List<Tavirat>();
 
+            // 5/a FELADAT
             Console.WriteLine("Középhőmérsékleti adatok:");
 
+            // A VÁROSOK SZÁMA HATÁROZZA MEG A FOLYAMAT SZÁMÁT
             for (int i = 0; i < Cities.Count; i++)
             {
                 var counter = 0;
@@ -264,66 +236,138 @@ namespace _11._11.Orai_munka
                 var maxTemp = 0;
                 var minTemp = 100;
 
-                List<char> checkList = new List<char>();
+                List<char> checkList = new List<char>(); // Ellenőrző lista létrehozása, egy későbbi metódus számára
 
                 MedTempList.Clear(); //Az ideiglenes listát ürítem
 
-                createPufferList(Cities, MedTempList, i); // Adott[i] városnév adatait feltöltöm egy ideiglenes listába
-                searchDefaultTimes(MedTempList, ref counter, ref sum, ref maxTemp, ref minTemp, checkList); // Az adott kritériumok alapján számítom a szükséges méréseket.
-                writeDataToTXT(Cities, MedTempList, i); // Az adott városnév adatait kiírom a kritériumoknak megfelelően egy .txt file-ba! 
+                // 5.1 >>> Adott[i] városnév adatait kiszedem az ideiglenes listába
+                createPufferList(Cities, MedTempList, i);
 
-                float a = (float)sum / counter;
+                // 5.2 >>> Az adott kritériumok alapján számítom a szükséges méréseket
+                searchDefaultTimes(MedTempList, ref counter, ref sum, ref maxTemp, ref minTemp, checkList);
 
-                var tempText = (checkList.Count <= 4) ? $"{MedTempList[i].Station} NA;" : $"{MedTempList[i].Station} középhőmérséklet: {Math.Round(a)}°C";
+                // 5.3 >>> Adott[i] városra vonatkozó adatok kiírása consolra. Az utolsó számítások itt történnek.
+                float medTemp = (float)sum / counter;
+                var tempText = (checkList.Count <= 4) ? $"{MedTempList[i].Station} NA;" : $"{MedTempList[i].Station} középhőmérséklet: {Math.Round(medTemp)}°C";
                 Console.WriteLine(tempText + $"  Hőmérséklet-ingadozás: {maxTemp - minTemp}");
 
+
+                // 6. FELADAT Talán gyorsabb, egyszerűbb itt futtatni a file-ba írást is
+                //  Az adott városnév adatait kiírom a kritériumoknak megfelelően egy .txt file-ba! 
+                //  writeDataToTXT(Cities, MedTempList, i);
+
             }
+
+            Console.WriteLine();
+        }
+
+            // 5.1 FELADAT
+            private static void createPufferList(List<string> Cities, List<Tavirat> MedTempList, int i)
+            {
+                foreach (Tavirat item in tElements)
+                {
+                    if (item.Station == Cities[i])
+                    {
+                        Tavirat op = new Tavirat(item.Station, item.Time, item.Dow, item.Temp);
+                        MedTempList.Add(op);
+                    }
+                }
+            }
+
+            // 5.2 FELADAT
+            private static void searchDefaultTimes(List<Tavirat> MedTempList, ref int counter, ref int sum, ref int maxTemp, ref int minTemp, List<char> checkList)
+            {
+                foreach (Tavirat item in MedTempList)
+                {
+                    if (item.Temp > maxTemp)
+                    {
+                        maxTemp = item.Temp;
+                    }
+                    if (item.Temp < minTemp)
+                    {
+                        minTemp = item.Temp;
+                    }
+
+                    var crit = item.Time.Substring(0, 2);
+
+                    switch (crit)
+                    {
+                        case "01":
+                            sum += item.Temp;
+                            counter++;
+                            checkList.Add('!');
+                            break;
+                        case "07":
+                            sum += item.Temp;
+                            counter++;
+                            checkList.Add('!');
+                            break;
+                        case "13":
+                            sum += item.Temp;
+                            counter++;
+                            checkList.Add('!');
+                            break;
+                        case "19":
+                            sum += item.Temp;
+                            counter++;
+                            checkList.Add('!');
+                            break;
+                        default:
+                            break;
+                    }
+
+                }
+            }
+
+
+        // 6. FELADAT
+        public static void writeDataToTxt()
+        {
+
+            for (int i = 0; i < Cities.Count; i++)
+            {
+
+                string CityTxtPath = Cities[i] + ".txt";
+                StreamWriter sw = new StreamWriter(CityTxtPath);
+                sw.WriteLine(Cities[i]);
+
+                foreach (Tavirat item in tElements)
+                {
+
+                    if (item.Station == Cities[i])
+                    {
+                        int windPower = Convert.ToInt32(item.Dow.Substring(3));
+                        string windChar = "";
+
+                        if (windPower >= 1)
+                        {
+                            for (int j = 0; j < windPower; j++)
+                            {
+                                windChar += "#";
+                            }
+                        }
+                        else
+                        {
+                            windChar = "";
+                        }
+
+                        sw.WriteLine(item.TimeFormatShow(item.Time) + " " + windChar);
+                    }
+                }
+
+                sw.Flush();
+                sw.Close();
+            }
+
             Console.WriteLine("\nA szöveges állományok feltöltése megtörtént!");
         }
-        private static void searchDefaultTimes(List<Tavirat> MedTempList, ref int counter, ref int sum, ref int maxTemp, ref int minTemp, List<char> checkList)
-        {
-             foreach (Tavirat item in MedTempList)
-            {
-                if (item.Temp > maxTemp)
-                {
-                    maxTemp = item.Temp;
-                }
-                if (item.Temp < minTemp)
-                {
-                    minTemp = item.Temp;
-                }
 
-                var crit = item.Time.Substring(0, 2);
 
-                switch (crit)
-                {
-                    case "01":
-                        sum += item.Temp;
-                        counter++;
-                        checkList.Add('!');
-                        break;
-                    case "07":
-                        sum += item.Temp;
-                        counter++;
-                        checkList.Add('!');
-                        break;
-                    case "13":
-                        sum += item.Temp;
-                        counter++;
-                        checkList.Add('!');
-                        break;
-                    case "19":
-                        sum += item.Temp;
-                        counter++;
-                        checkList.Add('!');
-                        break;
-                    default:
-                        break;
-                }
 
-            }
-        }
-        private static string writeDataToTXT(List<string> Cities, List<Tavirat> MedTempList, int i)
+
+
+        // Nem használt metódus
+        /*        private static string writeDataToTXT(List<string> Cities, List<Tavirat> MedTempList, int i)
         {
             string CityTxtPath = Cities[i] + ".txt";
             StreamWriter sw = new StreamWriter(CityTxtPath);
@@ -353,85 +397,51 @@ namespace _11._11.Orai_munka
             sw.Close();
 
             return CityTxtPath;
-        }
-        private static void createPufferList(List<string> Cities, List<Tavirat> MedTempList, int i)
-        {
-            foreach (Tavirat item in tElements)
-            {
-                if (item.Station == Cities[i])
-                {
-                    Tavirat op = new Tavirat(item.Station, item.Time, item.Dow, item.Temp);
-                    MedTempList.Add(op);
-                }
-            }
-        }
-        private static List<string> createCityList()
-        {
-            List<string> Cities = new List<string>();
+        }*///
 
-            foreach (var item in tElements)
-            {
-                if (!(Cities.Contains(item.Station)))
-                {
-                    Cities.Add(item.Station);
-                }
-            }
 
-            return Cities;
-        }
     }
 
     class Program
     {
         static void Main(string[] args)
         {
-            string filePath = "tavirathu13.txt";
 
-            FileStream fs = new FileStream(filePath, FileMode.Open);
-            StreamReader sr = new StreamReader(fs, Encoding.Default);
+            // 1. Olvassa be és tárolja el a tavirathu13.txt állomány adatait!
+            Tavirat.ReadDataFromTXT();
 
-            while (!sr.EndOfStream)
-            {
-                Tavirat temp = new Tavirat("", "", "", 0);
+            // 1.2 Városnevek lista létrehozása
+            Tavirat.createCityList();
 
-                try
-                {
-                    string[] puffer = sr.ReadLine().Split(' ');
-                    string a = puffer[0];
-                    string b = puffer[1];
-                    string c = puffer[2];
-                    int d = Convert.ToInt32(puffer[3]);
-                    ///
-                    /// if (a.Length != 2)
-                    ///{
-                    ///    a = "err";
-                    ///}
-                    ///if (b == "")
-                    ///{
-                    ///    b = "err";
-                    ///}
-                    ///if (c == "")
-                    ///{
-                    ///    c = "err";
-                    ///} /*Hibakezelés, beolvasáshoz*/
-                    temp = new Tavirat(a, b, c, d);
-                    Tavirat.tElements.Add(temp);
-                }
-                catch (Exception)
-                {
-                    temp = new Tavirat("err", "err", "err", 0);
-                    Tavirat.tElements.Add(temp);
-                }
-            }
 
-            sr.Close();
-            fs.Close();
-
+            // 2. Kérje be a felhasználótól egy város kódját! Adja meg, hogy az adott városból mikor érkezett az utolsó mérési adat!A kiírásban az időpontot óó:pp formátumban jelenítse meg!
+            Console.WriteLine("2. Feladat");
             Tavirat.GetLastMeasurementMoment();
+
+
+            // 3. Határozza meg, hogy a nap során mikor mérték a legalacsonyabb és a legmagasabb hőmérsékletet! Jelenítse meg a méréshez kapcsolódó település nevét, az időpontot és a hőmérsékletet! Amennyiben több legnagyobb vagy legkisebb érték van, akkor elég az egyiket kiírnia.
+            Console.WriteLine("3. Feladat");
             Tavirat.GetMaxMinTemperature();
+
+
+            // 4. Határozza meg, azokat a településeket és időpontokat, ahol és amikor a mérések idején szélcsend volt!(A szélcsendet a táviratban 00000 kóddal jelölik.) Ha nem volt ilyen, akkor a „Nem volt szélcsend a mérések idején.” szöveget írja ki! A kiírásnál a település kódját és az időpontot jelenítse meg.
+            Console.WriteLine("4. Feladat");
             Tavirat.GetZeroWind();
+
+
+            // 5. Határozza meg a települések napi középhőmérsékleti adatát és a hőmérséklet - ingadozását! A kiírásnál a település kódja szerepeljen a sor elején a minta szerint!A kiírásnál csak a megoldott feladatrészre vonatkozó szöveget és értékeket írja ki!
+            Console.WriteLine("5. Feladat");
             Tavirat.GetMedTempAndFluct();
 
+
+            // 6. Hozzon létre településenként egy szöveges állományt, amely első sorában a település kódját tartalmazza! A további sorokban a mérési időpontok és a hozzá tartozó szélerősségek jelenjenek meg! A szélerősséget a minta szerint a számértéknek megfelelő számú kettőskereszttel(#) adja meg! A fájlban az időpontokat és a szélerősséget megjelenítő kettőskereszteket szóközzel válassza el egymástól! A fájl neve X.txt legyen, ahol az X helyére a település kódja kerüljön!
+            Console.Write("6. Feladat");
+            Tavirat.writeDataToTxt();
+
+
+
+
+            // PROGRAM VÉGE
             Console.ReadKey();
 
         }

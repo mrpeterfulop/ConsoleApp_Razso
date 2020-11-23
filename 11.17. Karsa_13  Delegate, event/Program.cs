@@ -43,7 +43,7 @@ namespace _11._17.Karsa_13__Delegate__event
 
 
     }
-
+    /*
     class ObjectBoxUnbox
     {
         int a = 120;
@@ -68,7 +68,7 @@ namespace _11._17.Karsa_13__Delegate__event
 
 
     }
-
+    */
     class Program
     {
         delegate void VoidDelegate(string name);
@@ -126,7 +126,7 @@ namespace _11._17.Karsa_13__Delegate__event
             //C# Programozás 34.rész - OOP12 - Object osztály, boxing, unboxing
 
             Console.WriteLine("Object osztály, boxing, unboxing");
-            ObjectBoxUnbox OBU = new ObjectBoxUnbox();
+            //ObjectBoxUnbox OBU = new ObjectBoxUnbox();
 
 
             OBU.A = 100000;
