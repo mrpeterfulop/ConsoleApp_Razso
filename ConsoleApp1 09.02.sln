@@ -119,6 +119,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11.23. 2018 Tarsalgo", "11.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11.24. 2018 Tarsalgo V2", "11.24. 2018 Tarsalgo V2\11.24. 2018 Tarsalgo V2.csproj", "{A8EA73AD-BABC-43DD-8CFD-982094663B19}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11.24 Meteorologiai jelentes V2", "11.24 Meteorologiai jelentes V2\11.24 Meteorologiai jelentes V2.csproj", "{EB542785-34B2-422B-A3FC-4DDAEFEDC7BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -357,6 +359,10 @@ Global
 		{A8EA73AD-BABC-43DD-8CFD-982094663B19}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8EA73AD-BABC-43DD-8CFD-982094663B19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8EA73AD-BABC-43DD-8CFD-982094663B19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB542785-34B2-422B-A3FC-4DDAEFEDC7BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB542785-34B2-422B-A3FC-4DDAEFEDC7BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB542785-34B2-422B-A3FC-4DDAEFEDC7BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB542785-34B2-422B-A3FC-4DDAEFEDC7BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
