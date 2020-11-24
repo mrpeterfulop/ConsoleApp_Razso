@@ -117,16 +117,17 @@ namespace _11._11.Orai_munka
         public static void Calculations()
         {
             Console.WriteLine("\n5. feladat");
-            List<int> noData = new List<int>();
 
+            List<string> exc = new List<string>() { "01", "07", "13", "19" };
+            List<string> cont = new List<string>();
             double sum = 0;
             int counter = 0;
 
             for (int i = 0; i < allCity.Count; i++)
             {
                 int maxTemp = 0;
-                int minTemp = 100;
-                noData.Clear();
+                int minTemp = 100; // Kezdeti érték, ami az első vizsgálatnál felülíródik.
+                cont.Clear();
 
                 foreach (var item in metData)
                 {
@@ -142,47 +143,25 @@ namespace _11._11.Orai_munka
                         }
 
                         string hour = item.Time.Substring(0, 2);
-                        switch (hour)
+
+                        if (exc.Contains(hour) && !(cont.Contains(hour)))
                         {
-                            case "01":
-                                sum = sum + item.Temp;
-                                counter++;
-                                noData.Add(1);
-                                break;
-
-                            case "07":
-                                sum = sum + item.Temp;
-                                counter++;
-                                noData.Add(2);
-                                break;
-
-                            case "13":
-                                sum = sum + item.Temp;
-                                counter++;
-                                noData.Add(3);
-                                break;
-
-                            case "19":
-                                sum = sum + item.Temp;
-                                counter++;
-                                noData.Add(4);
-                                break;
-
-                            default:
-                                break;
+                            sum = sum + item.Temp;
+                            counter++;
+                            cont.Add(hour);
                         }
                     }
                 }
 
-                if (noData.Contains(1) && noData.Contains(2) && noData.Contains(3) && noData.Contains(4))
+                if (cont.Count == 4)
                 {
-                    Console.Write($"{allCity[i]} Középhőmérséklet: {Math.Round(sum / counter)};");
-                    Console.WriteLine($" Hőmérséklet-ingadozás: {maxTemp - minTemp}");
+                        Console.Write($"{allCity[i]} Középhőmérséklet: {Math.Round(sum / counter)};");
+                        Console.WriteLine($" Hőmérséklet-ingadozás: {maxTemp - minTemp}");
                 }
                 else
                 {
-                    Console.Write($"{allCity[i]} NA;");
-                    Console.WriteLine($" Hőmérséklet-ingadozás: {maxTemp - minTemp}");
+                        Console.Write($"{allCity[i]} NA;");
+                        Console.WriteLine($" Hőmérséklet-ingadozás: {maxTemp - minTemp}");
                 }
             }
         }
@@ -190,7 +169,6 @@ namespace _11._11.Orai_munka
         //6. FELADAT
         public static void WriteToFile()
         {
-
             for (int i = 0; i < allCity.Count; i++)
             {
                 int wind = 0;
@@ -201,7 +179,6 @@ namespace _11._11.Orai_munka
 
                 foreach (var item in metData)
                 {
-
                     if (allCity[i] == item.City)
                     {
                         wind = Convert.ToInt32(item.Wind.Substring(3));
@@ -211,17 +188,12 @@ namespace _11._11.Orai_munka
                         {
                             windchar += "#";
                         }
-
                         sw.WriteLine($"{item.Time[0]}{item.Time[1]}:{item.Time[2]}{item.Time[3]} {windchar}");
                     }
-
                 }
-
                 sw.Flush();
                 sw.Close();
-
             }
-
         }
     }
 }
