@@ -169,6 +169,8 @@ namespace _11._11.Orai_munka
         //6. FELADAT
         public static void WriteToFile()
         {
+            Console.WriteLine("\n6. feladat");
+
             for (int i = 0; i < allCity.Count; i++)
             {
                 int wind = 0;
@@ -194,6 +196,8 @@ namespace _11._11.Orai_munka
                 sw.Flush();
                 sw.Close();
             }
+
+            Console.WriteLine("A file-ba írás megtörtént!");
         }
     }
 }
