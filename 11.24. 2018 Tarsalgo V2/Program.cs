@@ -9,10 +9,7 @@ namespace _11._23._2018_Tarsalgo
 {
     class Lounge
     {
-
         public static List<Lounge> doorList = new List<Lounge>();
-        public static List<Lounge> enterData = new List<Lounge>();
-        public static List<Lounge> exitData = new List<Lounge>();
         public static List<int> users = new List<int>();
         public static List<int> usersIN = new List<int>();
 
@@ -89,43 +86,21 @@ namespace _11._23._2018_Tarsalgo
             return h + ":" + m;
         }
 
-        // 2. FELADAT
+        // 2. FELADAT ------------------------------------------
         public static void GetFirstIN_LastOUT_ID()
         {
-            enterData.Clear();
-            exitData.Clear();
-
-            foreach (Lounge item in doorList)
-            {
-
-                if (item.Direction == "be")
-                {
-                    Lounge line = new Lounge(item.Hour, item.Minute, item.Id, item.Direction);
-                    enterData.Add(line);
-                }
-
-                if (item.Direction == "ki") {
-                    Lounge line = new Lounge(item.Hour, item.Minute, item.Id, item.Direction);
-                    exitData.Add(line);
-                }
-
-            }
-            int first = GetFirstIn();
-            int last = GetLastOut();
-
-
-            //var firstIn = enterData[0].Id;
-            var firstIn = first;
-           // var lastOut = exitData[exitData.Count - 1].Id;
-            var lastOut = last;
+            int firstIn = GetFirstIn();
+            int lastOut = GetLastOut();
 
             Console.WriteLine("\n2.feladat");
             Console.WriteLine($"Az első belépő: {firstIn}");
             Console.WriteLine($"Az utolsó kilépő: {lastOut}");
         }
+
+        // 2.1 FELADAT
         public static int GetLastOut()
         {
-            for (int i = doorList.Count-1; i >= 0; i--)
+            for (int i = doorList.Count - 1; i >= 0; i--)
             {
                 if (doorList[i].Direction == "ki")
                 {
@@ -135,6 +110,7 @@ namespace _11._23._2018_Tarsalgo
             return -1;
         }
 
+        // 2.2 FELADAT
         public static int GetFirstIn()
         {
             foreach (Lounge item in doorList)
@@ -146,12 +122,11 @@ namespace _11._23._2018_Tarsalgo
             }
             return -1;
         }
+        // -----------------------------------------------------
 
         // 3. FELADAT
         public static void GetCountof_IN_OUT_byUsers()
         {
-
-            List<string> userDataSUM = new List<string>();
 
             // ID azonosítók külön listába szedése
             foreach (Lounge item in doorList)
@@ -161,45 +136,32 @@ namespace _11._23._2018_Tarsalgo
                     users.Add(item.Id);
                 }
             }
-            users = users.OrderBy(a => a).ToList();
 
-            // Sorok File-ba írása
-            userDataSUM.Clear();
-            for (int i = 0; i < users.Count; i++)
-            {
-                var counter = 0;
-                foreach (var item in doorList)
-                {
-                    if (item.Id == users[i])
-                    {
-                        counter++;
-                    }
-                }
-
-                if (counter % 2 != 0)
-                {
-                    usersIN.Add(users[i]);
-                }
-
-                var line = "ID: " + Convert.ToString(users[i]) + " " + counter;
-
-                userDataSUM.Add(line);
-            }
+            users.Sort();
 
             // Adatok Fileba írása
-            using (FileStream fs = new FileStream("athaladas.txt",FileMode.Open)) {
-
-                using (StreamWriter sw = new StreamWriter(fs, Encoding.Default)) {
-
-                    foreach (var item in userDataSUM)
+            using (StreamWriter sw = File.CreateText("athaladas.txt"))
+            {
+                for (int i = 0; i < users.Count; i++)
+                {
+                    var counter = 0;
+                    foreach (var item in doorList)
                     {
-                        sw.WriteLine(item);
-
+                        if (item.Id == users[i])
+                        {
+                            counter++;
+                        }
                     }
-                }
+                    // 4. Feladat
+                    if (counter % 2 != 0)
+                    {
+                        usersIN.Add(users[i]);
+                    }
 
+                    var line = "ID: " + Convert.ToString(users[i]) + " " + counter;
+                    sw.WriteLine(line);
+                }
             }
-            
         }
 
         // 4. FELADAT
@@ -226,26 +188,27 @@ namespace _11._23._2018_Tarsalgo
                     minute = item.Minute;
                 }
             }
-
+            
             Console.WriteLine("\n5. feladat");
+            Console.WriteLine("10. sorban bentlévők száma: " + doorList[10].Headcount);
             Console.WriteLine($"Például {CreateTimeFormat(hour, minute)} - kor voltak a legtöbben({max} fő) a társalgóban.");
 
         }
 
         // 6. FELADAT
-        public static string GetUserID()
+        public static int GetUserID()
         {
             Console.WriteLine();
             Console.WriteLine("\n6. feladat");
             Console.Write("Adja meg a személy azonosítóját! ");
-            string inputData = Console.ReadLine();
+            int inputData = Convert.ToInt32(Console.ReadLine());
 
-            while (!(int.TryParse(inputData, out int a)) || !(users.Contains(Convert.ToInt32(inputData))))
+            while (!(users.Contains(inputData)))
             {
                 Console.WriteLine("A keresett felhasználó nem található!\nAz alábbi lehetőségek közül tudsz váalsztani:");
-                Console.WriteLine(string.Join(", " ,users));
+                Console.WriteLine(string.Join(", ", users));
                 Console.Write("Adja meg a személy azonosítóját! ");
-                inputData = Console.ReadLine();
+                inputData = Convert.ToInt32(Console.ReadLine());
             }
 
             return inputData;
@@ -253,114 +216,72 @@ namespace _11._23._2018_Tarsalgo
         }
 
         // 7. FELADAT
-        public static List<Lounge> InputUserFromToTime(string input)
+        public static void InputUserFromToTime(int ID)
         {
-
-            List<Lounge> activeUser = new List<Lounge>();
-            activeUser.Clear();
             Console.WriteLine("\n7. feladat");
 
-            foreach (var item in doorList)
+            foreach (Lounge item in doorList)
             {
-
-                if (input == Convert.ToString(item.Id))
+                if (ID == item.Id)
                 {
-                    Lounge line = new Lounge(item.Hour, item.Minute, item.Id, item.Direction);
-                    activeUser.Add(line);
-                }
-
-            }
-
-            for (int i = 0; i < activeUser.Count; i++)
-            {
-                if (i%2 == 0 || i == 0)
-                {
-                    Console.Write(CreateTimeFormat(activeUser[i].Hour, activeUser[i].Minute) + "-");
-                }
-                else
-                {
-                    Console.Write(CreateTimeFormat(activeUser[i].Hour, activeUser[i].Minute)+"\n");
-                }
-            }
-
-            return activeUser;
-
-        }
-
-        // 8. FELADAT
-        public static void TimeAboutInputUser(List<Lounge> activeUser)
-        {
-            var id =  activeUser[0].Id;
-            var position = "";
-            var counter = 0;
-            
-            if (activeUser.Count % 2 != 0)
-            {
-               counter = activeUser.Count + 1;
-
-            }
-            else
-            {
-                counter = activeUser.Count;
-            }
-
-            double minutes = 0;
-            int i = 0;
-
-            while ( i <= counter-2)
-            {
-                int date1_h = 0;
-                int date1_m = 0;
-                int date2_h = 0;
-                int date2_m = 0;
-
-                if (activeUser.Count % 2 != 0)
-                {
-                    if (i <= counter - 4)
+                    if (item.Direction == "be")
                     {
-                        date1_h = activeUser[i].Hour;
-                        date1_m = activeUser[i].Minute;
-                        date2_h = activeUser[i + 1].Hour;
-                        date2_m = activeUser[i + 1].Minute;
+                        Console.Write($"{CreateTimeFormat(item.Hour, item.Minute)}-");
                     }
                     else
                     {
-                        date1_h = activeUser[i].Hour;
-                        date1_m = activeUser[i].Minute;
-                        date2_h = 15;
-                        date2_m = 0;
+                        Console.WriteLine($"{CreateTimeFormat(item.Hour, item.Minute)}");
                     }
                 }
-                else
-                {
-                    if (i <= counter - 2)
-                    {
-                        date1_h = activeUser[i].Hour;
-                        date1_m = activeUser[i].Minute;
-                        date2_h = activeUser[i + 1].Hour;
-                        date2_m = activeUser[i + 1].Minute;
-                    }
-                }
-
-                i = i + 2;
-
-                DateTime date1 = new DateTime(2000, 01, 01, date1_h, date1_m, 00);
-                DateTime date2 = new DateTime(2000, 01, 01, date2_h, date2_m, 00);
-
-                DateTime startTime = date1;
-                DateTime endTime = date2;
-
-                TimeSpan span = endTime.Subtract(startTime);
-                minutes = minutes + Convert.ToInt32(span.TotalMinutes);
-
-
             }
 
-            if (activeUser.Count % 2 != 0) position = "a társalgóban volt"; else position = "nem volt a társalgóban";
+            Console.WriteLine();
+        }
 
-            Console.WriteLine("\n\n8. feladat");
-            Console.WriteLine($"A(z) {id}. személy összesen {minutes} percet volt bent, a megfigyelés végén {position}.");
+        // 8. FELADAT
+        public static void TimeAboutInputUser(int ID)
+        {
 
+            Console.WriteLine("\n8. feladat");
+
+            TimeSpan starTime = new TimeSpan();
+            TimeSpan endTime = new TimeSpan();
+            double minutes = 0;
+            var counter = 0;
+            bool stayedInside = false;
+
+            foreach (Lounge item in doorList)
+            {
+                if (ID == item.Id)
+                {
+                    if (item.Direction == "be")
+                    {
+                        starTime = new TimeSpan(item.Hour, item.Minute, 0);
+                        stayedInside = true;
+                    }
+
+                    else
+                    {
+                        endTime = new TimeSpan(item.Hour, item.Minute, 0);
+                        minutes += (endTime - starTime).Minutes;
+                        stayedInside = false;
+                    }
+
+                    counter++;
+                }
+            }
+
+            if (stayedInside == true)
+            {
+                endTime = new TimeSpan(15, 0, 0);
+                minutes += (endTime - starTime).Minutes; // A Start Time, az utolsó belépési időpont, ami a korábbi ciklusból egyszerűen megmaradt érték... 
+                counter++;
+            }
+
+            var position = "";
+            if (counter % 2 != 0) position = "a társalgóban volt"; else position = "nem volt a társalgóban";
+
+            Console.WriteLine($"A(z) {ID}. személy összesen {minutes} percet volt bent, a megfigyelés végén {position}.");
         }
 
     }
@@ -370,7 +291,6 @@ namespace _11._23._2018_Tarsalgo
         static void Main(string[] args)
         {
 
-      
 
             //1. Olvassa be és tárolja el az ajto.txt fájl tartalmát!
             Lounge.ImportData();
@@ -393,17 +313,17 @@ namespace _11._23._2018_Tarsalgo
 
 
             //6. Kérje be a felhasználótól egy személy azonosítóját! A további feladatok megoldásánál ezt használja fel!
-            string inputData = Lounge.GetUserID();
+            int ID = Lounge.GetUserID();
 
 
             //7. Írja a képernyőre, hogy a beolvasott azonosítóhoz tartozó személy mettől meddig tartózkodott a társalgóban!
-            List<Lounge> activeUser = Lounge.InputUserFromToTime(inputData);
+            Lounge.InputUserFromToTime(ID);
 
 
             //8. Határozza meg, hogy a megfigyelt időszakban a beolvasott azonosítójú személy összesen hány percet töltött a társalgóban! Az előző feladatban példaként szereplő 22 - es személy 5 alkalommal járt bent, a megfigyelés végén még bent volt. Róla azt tudjuk, hogy 18 percet töltött bent a megfigyelés végéig. A 39 - es személy 6 alkalommal járt bent, a vizsgált időszak végén nem tartózkodott a helyiségben. Róla azt tudjuk, hogy 39 percet töltött ott.Írja ki, hogy a beolvasott azonosítójú személy mennyi időt volt a társalgóban, és a megfigyelési időszak végén bent volt - e még!
-            Lounge.TimeAboutInputUser(activeUser);
+            Lounge.TimeAboutInputUser(ID);
 
-           
+
             Console.ReadLine();
 
         }
