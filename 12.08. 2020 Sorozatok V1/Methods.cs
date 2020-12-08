@@ -61,7 +61,6 @@ namespace _12._08._2020_Sorozatok_V1
             if (weekdays.Contains(userInput))
             {
                 int id = Array.IndexOf(weekdays, userInput);
-                var dayInEnlgis = (DayOfWeek)(id);
 
                 var selectUserDays = Series.Films.Where(date => date.ReleaseDate != "NI").Where(date => Convert.ToDateTime(date.ReleaseDate).DayOfWeek == (DayOfWeek)(id)).Select(film=>film.Title).Distinct();
 
