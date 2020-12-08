@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
+using System.Linq;
 
 namespace _11._11.Orai_munka
 {
@@ -169,6 +170,35 @@ namespace _11._11.Orai_munka
         //6. FELADAT
         public static void WriteToFile()
         {
+            var CityGroup = metData.GroupBy(a => a.City);
+            foreach (var varos in CityGroup)
+            {
+                using (var fs = new FileStream(varos.Key+".txt", FileMode.Create))
+                {
+                    using (var sw = new StreamWriter(fs))
+                    {
+                        sw.WriteLine(varos.Key);
+
+                        foreach (var item in metData)
+                        {
+                            if (item.City.Equals(varos.Key)) //(varos.Key == item.City)
+                            {
+                               var wind = Convert.ToInt32(item.Wind.Substring(3));
+                               var windchar = "";
+
+                                for (int j = 0; j < wind; j++)
+                                {
+                                    windchar += '#';
+                                }
+
+                                sw.WriteLine($"{item.Time.Insert(2,":")} {windchar}");
+                            }
+                        }
+                    }
+                }
+            }
+
+            /*
             Console.WriteLine("\n6. feladat");
 
             for (int i = 0; i < allCity.Count; i++)
@@ -178,14 +208,12 @@ namespace _11._11.Orai_munka
                 var filePath = allCity[i] + ".txt";
                 StreamWriter sw = new StreamWriter(filePath);
                 sw.WriteLine(allCity[i]);
-
                 foreach (var item in metData)
                 {
                     if (allCity[i] == item.City)
                     {
                         wind = Convert.ToInt32(item.Wind.Substring(3));
                         windchar = "";
-
                         for (int j = 0; j < wind; j++)
                         {
                             windchar += "#";
@@ -198,6 +226,8 @@ namespace _11._11.Orai_munka
             }
 
             Console.WriteLine("A file-ba írás megtörtént!");
+
+            */
         }
     }
 }
