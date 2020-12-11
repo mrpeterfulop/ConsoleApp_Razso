@@ -9,7 +9,6 @@ using System.Collections.Generic;
 namespace _12._08._2020_Sorozatok_V1
 {
 
-
     public class Methods
     {
         public  void SumSeriesTime()

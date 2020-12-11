@@ -5,14 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-
-
 namespace _11._18.Karsa_15__Path__Directory__File
 {
     class Program
     {
         static void Main(string[] args)
         {
+
 
             string file = @"d:\IT\testfile.txt";
 
