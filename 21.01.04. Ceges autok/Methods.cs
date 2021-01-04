@@ -75,7 +75,7 @@ namespace _21._01._04.Ceges_autok
 
         public static void TraficOnDay()
         {
-            Console.WriteLine("3. feladat\nNap: ");
+            Console.Write("3. feladat\nNap: ");
             var userInput = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine($"Forgalom a(z) {userInput}. napon:");
