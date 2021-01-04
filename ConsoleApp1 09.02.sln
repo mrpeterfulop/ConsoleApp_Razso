@@ -125,6 +125,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12.08. 2020 Sorozatok V1", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12.11. File Operations", "12.11. File Operations\12.11. File Operations.csproj", "{14911E1E-05E8-45CE-9F3B-AD65CBD51DCE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "21.01.04. Ceges autok", "21.01.04. Ceges autok\21.01.04. Ceges autok.csproj", "{57F76797-C62A-4D5A-8F56-358813A2FB43}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -375,6 +377,10 @@ Global
 		{14911E1E-05E8-45CE-9F3B-AD65CBD51DCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14911E1E-05E8-45CE-9F3B-AD65CBD51DCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14911E1E-05E8-45CE-9F3B-AD65CBD51DCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57F76797-C62A-4D5A-8F56-358813A2FB43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57F76797-C62A-4D5A-8F56-358813A2FB43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57F76797-C62A-4D5A-8F56-358813A2FB43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57F76797-C62A-4D5A-8F56-358813A2FB43}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
